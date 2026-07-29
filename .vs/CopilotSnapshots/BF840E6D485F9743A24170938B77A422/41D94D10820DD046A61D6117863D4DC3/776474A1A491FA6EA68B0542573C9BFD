@@ -1,0 +1,60 @@
+﻿using Cart.API.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+
+namespace Cart.API.Controllers;
+
+[ApiController]
+[Route("api/v1/cart")]
+[Authorize] // Toàn bộ Cart.API yêu cầu đăng nhập — giỏ hàng luôn gắn với 1 user cụ thể.
+public class CartController(CartService cartService) : ControllerBase
+{
+    private string CurrentUserId =>
+        User.FindFirstValue(JwtRegisteredClaimNames.Sub)
+        ?? throw new InvalidOperationException("Token không có claim sub");
+
+    [HttpGet]
+    public async Task<IActionResult> GetCart()
+    {
+        var cart = await cartService.GetCartAsync(CurrentUserId);
+        return Ok(cart);
+    }
+
+    [HttpPost("items")]
+    public async Task<IActionResult> AddItem(AddItemRequest req)
+    {
+        var item = new CartItem
+        {
+            ProductId = req.ProductId,
+            ProductName = req.ProductName,
+            UnitPrice = req.UnitPrice,
+            Quantity = req.Quantity
+        };
+
+        var cart = await cartService.AddItemAsync(CurrentUserId, item);
+        return Ok(cart);
+    }
+
+    [HttpPut("items/{productId}")]
+    public async Task<IActionResult> UpdateQuantity(string productId, UpdateQuantityRequest req)
+    {
+        var cart = await cartService.UpdateQuantityAsync(CurrentUserId, productId, req.Quantity);
+        return cart is null ? NotFound() : Ok(cart);
+    }
+
+    [HttpDelete("items/{productId}")]
+    public async Task<IActionResult> RemoveItem(string productId)
+    {
+        var cart = await cartService.RemoveItemAsync(CurrentUserId, productId);
+        return Ok(cart);
+    }
+
+    [HttpDelete]
+    public async Task<IActionResult> Clear()
+    {
+        await cartService.ClearAsync(CurrentUserId);
+        return NoContent();
+    }
+}

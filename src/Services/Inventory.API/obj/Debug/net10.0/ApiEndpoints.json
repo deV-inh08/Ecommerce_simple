@@ -1,0 +1,107 @@
+[
+  {
+    "ContainingType": "Inventory.API.Controllers.InventoryController",
+    "Method": "Initialize",
+    "RelativePath": "api/v1/inventory/items",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "Inventory.API.Models.InitializeStockRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Inventory.API.Controllers.InventoryController",
+    "Method": "GetAll",
+    "RelativePath": "api/v1/inventory/items",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Inventory.API.Controllers.InventoryController",
+    "Method": "GetBySku",
+    "RelativePath": "api/v1/inventory/items/{sku}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sku",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Inventory.API.Controllers.InventoryController",
+    "Method": "Release",
+    "RelativePath": "api/v1/inventory/items/{sku}/release",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sku",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "req",
+        "Type": "Inventory.API.Models.ReleaseStockRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Inventory.API.Controllers.InventoryController",
+    "Method": "Replenish",
+    "RelativePath": "api/v1/inventory/items/{sku}/replenish",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sku",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "req",
+        "Type": "Inventory.API.Models.ReplenishStockRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Inventory.API.Controllers.InventoryController",
+    "Method": "Reserve",
+    "RelativePath": "api/v1/inventory/items/{sku}/reserve",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "sku",
+        "Type": "System.String",
+        "IsRequired": true
+      },
+      {
+        "Name": "req",
+        "Type": "Inventory.API.Models.ReserveStockRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

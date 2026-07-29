@@ -1,0 +1,1134 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\SimpleEcommerce\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\services\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\order.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\order.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|d:\\simpleecommerce\\src\\services\\cart.api\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|solutionrelative:src\\services\\cart.api\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|d:\\simpleecommerce\\src\\services\\cart.api\\cart.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|solutionrelative:src\\services\\cart.api\\cart.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D61286E1-57AE-395D-0DF4-E16159EA4BFA}|src\\Shared\\Contracts\\Shared.Contracts.csproj|d:\\simpleecommerce\\src\\shared\\contracts\\orderevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61286E1-57AE-395D-0DF4-E16159EA4BFA}|src\\Shared\\Contracts\\Shared.Contracts.csproj|solutionrelative:src\\shared\\contracts\\orderevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|d:\\simpleecommerce\\src\\services\\checkout.api\\sagastate\\checkoutsagastatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|solutionrelative:src\\services\\checkout.api\\sagastate\\checkoutsagastatemachine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\cartapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\cartapiclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\controllers\\orderscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|d:\\simpleecommerce\\src\\services\\cart.api\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|solutionrelative:src\\services\\cart.api\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|d:\\simpleecommerce\\src\\services\\cart.api\\dto\\cartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|solutionrelative:src\\services\\cart.api\\dto\\cartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|d:\\simpleecommerce\\src\\services\\cart.api\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|solutionrelative:src\\services\\cart.api\\entities\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\entities\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\dto\\orderresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\dto\\orderresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|d:\\simpleecommerce\\src\\services\\checkout.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|solutionrelative:src\\services\\checkout.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|d:\\simpleecommerce\\src\\services\\checkout.api\\checkout.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|solutionrelative:src\\services\\checkout.api\\checkout.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|d:\\simpleecommerce\\src\\services\\identity.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|solutionrelative:src\\services\\identity.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|d:\\simpleecommerce\\src\\services\\checkout.api\\checkoutdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|solutionrelative:src\\services\\checkout.api\\checkoutdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|d:\\simpleecommerce\\src\\services\\identity.api\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|solutionrelative:src\\services\\identity.api\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|d:\\simpleecommerce\\src\\services\\checkout.api\\sagastate\\checkoutsagastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|solutionrelative:src\\services\\checkout.api\\sagastate\\checkoutsagastate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|d:\\simpleecommerce\\src\\services\\checkout.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|solutionrelative:src\\services\\checkout.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|d:\\simpleecommerce\\src\\services\\checkout.api\\services\\reservationtimeoutjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1EB9AE53-2174-B71F-452B-C62960C77F7B}|src\\Services\\Checkout.API\\Checkout.API.csproj|solutionrelative:src\\services\\checkout.api\\services\\reservationtimeoutjob.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D61286E1-57AE-395D-0DF4-E16159EA4BFA}|src\\Shared\\Contracts\\Shared.Contracts.csproj|d:\\simpleecommerce\\src\\shared\\contracts\\checkoutevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61286E1-57AE-395D-0DF4-E16159EA4BFA}|src\\Shared\\Contracts\\Shared.Contracts.csproj|solutionrelative:src\\shared\\contracts\\checkoutevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D61286E1-57AE-395D-0DF4-E16159EA4BFA}|src\\Shared\\Contracts\\Shared.Contracts.csproj|d:\\simpleecommerce\\src\\shared\\contracts\\shared.contracts.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D61286E1-57AE-395D-0DF4-E16159EA4BFA}|src\\Shared\\Contracts\\Shared.Contracts.csproj|solutionrelative:src\\shared\\contracts\\shared.contracts.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{318D2742-157B-1B92-9F01-01C7F80B2F48}|src\\Gateway\\Gateway.csproj|d:\\simpleecommerce\\src\\gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{318D2742-157B-1B92-9F01-01C7F80B2F48}|src\\Gateway\\Gateway.csproj|solutionrelative:src\\gateway\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\inventory.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\inventory.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\consumers\\reservestockrequestedconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\consumers\\reservestockrequestedconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\consumer\\ordercancelledconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\consumer\\ordercancelledconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\consumer\\orderconfirmedconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\consumer\\orderconfirmedconsumer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|d:\\simpleecommerce\\src\\services\\order.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7FBF4311-195E-C960-9814-675BFA016263}|src\\Services\\Order.API\\Order.API.csproj|solutionrelative:src\\services\\order.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D61286E1-57AE-395D-0DF4-E16159EA4BFA}|src\\Shared\\Contracts\\Shared.Contracts.csproj|d:\\simpleecommerce\\src\\shared\\contracts\\inventoryevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D61286E1-57AE-395D-0DF4-E16159EA4BFA}|src\\Shared\\Contracts\\Shared.Contracts.csproj|solutionrelative:src\\shared\\contracts\\inventoryevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\events\\inventoryevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\events\\inventoryevents.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\aggregate\\inventoryaggregate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\aggregate\\inventoryaggregate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\repository\\inventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\repository\\inventoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\worker\\inventoryprojectionworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\worker\\inventoryprojectionworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\services\\inventoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\services\\inventoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{318D2742-157B-1B92-9F01-01C7F80B2F48}|src\\Gateway\\Gateway.csproj|d:\\simpleecommerce\\src\\gateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{318D2742-157B-1B92-9F01-01C7F80B2F48}|src\\Gateway\\Gateway.csproj|solutionrelative:src\\gateway\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{318D2742-157B-1B92-9F01-01C7F80B2F48}|src\\Gateway\\Gateway.csproj|d:\\simpleecommerce\\src\\gateway\\gateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{318D2742-157B-1B92-9F01-01C7F80B2F48}|src\\Gateway\\Gateway.csproj|solutionrelative:src\\gateway\\gateway.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|d:\\simpleecommerce\\src\\services\\inventory.api\\readmodel\\inventoryreadmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F3EAB74-5AEE-1DD9-D3E2-67418BA064A5}|src\\Services\\Inventory.API\\Inventory.API.csproj|solutionrelative:src\\services\\inventory.api\\readmodel\\inventoryreadmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|d:\\simpleecommerce\\src\\services\\identity.api\\identity.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|solutionrelative:src\\services\\identity.api\\identity.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|d:\\simpleecommerce\\src\\services\\catalog.api\\catalog.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|solutionrelative:src\\services\\catalog.api\\catalog.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|d:\\simpleecommerce\\src\\services\\identity.api\\entity\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|solutionrelative:src\\services\\identity.api\\entity\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|d:\\simpleecommerce\\src\\services\\catalog.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|solutionrelative:src\\services\\catalog.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|d:\\simpleecommerce\\src\\services\\cart.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|solutionrelative:src\\services\\cart.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|d:\\simpleecommerce\\src\\services\\cart.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|solutionrelative:src\\services\\cart.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|d:\\simpleecommerce\\src\\services\\cart.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|solutionrelative:src\\services\\cart.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|d:\\simpleecommerce\\src\\services\\cart.api\\cart.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{27631934-E504-7AE1-31C0-D3C88543393B}|src\\Services\\Cart.API\\Cart.API.csproj|solutionrelative:src\\services\\cart.api\\cart.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|d:\\simpleecommerce\\src\\services\\catalog.api\\rabbitmqpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|solutionrelative:src\\services\\catalog.api\\rabbitmqpublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|d:\\simpleecommerce\\src\\services\\catalog.api\\schema\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|solutionrelative:src\\services\\catalog.api\\schema\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|d:\\simpleecommerce\\src\\services\\catalog.api\\mongocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|solutionrelative:src\\services\\catalog.api\\mongocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|d:\\simpleecommerce\\src\\services\\catalog.api\\services\\catalogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|solutionrelative:src\\services\\catalog.api\\services\\catalogservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|d:\\simpleecommerce\\src\\services\\catalog.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|solutionrelative:src\\services\\catalog.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|d:\\simpleecommerce\\src\\services\\catalog.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|solutionrelative:src\\services\\catalog.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|d:\\simpleecommerce\\src\\services\\catalog.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|solutionrelative:src\\services\\catalog.api\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|d:\\simpleecommerce\\src\\services\\catalog.api\\dto\\productrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{31AC1398-DD10-7226-C394-177B5095832C}|src\\Services\\Catalog.API\\Catalog.API.csproj|solutionrelative:src\\services\\catalog.api\\dto\\productrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|d:\\simpleecommerce\\src\\services\\identity.api\\controller\\identitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|solutionrelative:src\\services\\identity.api\\controller\\identitycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|d:\\simpleecommerce\\src\\services\\identity.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|solutionrelative:src\\services\\identity.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|d:\\simpleecommerce\\src\\services\\identity.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|solutionrelative:src\\services\\identity.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|d:\\simpleecommerce\\src\\services\\identity.api\\service\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|solutionrelative:src\\services\\identity.api\\service\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|d:\\simpleecommerce\\src\\services\\identity.api\\models\\requests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|solutionrelative:src\\services\\identity.api\\models\\requests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|d:\\simpleecommerce\\src\\services\\identity.api\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E30983E1-A0DC-2944-364F-46A860D6ADA4}|src\\Services\\Identity.API\\Identity.API.csproj|solutionrelative:src\\services\\identity.api\\entity\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C591DCC4-6EDA-B272-84F4-82A284804B17}|src\\Shared\\ServiceDefaults\\ServiceDefaults.csproj|d:\\simpleecommerce\\src\\shared\\servicedefaults\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C591DCC4-6EDA-B272-84F4-82A284804B17}|src\\Shared\\ServiceDefaults\\ServiceDefaults.csproj|solutionrelative:src\\shared\\servicedefaults\\extensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 224,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Services\\OrderService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\Services\\OrderService.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Services\\OrderService.cs",
+              "RelativeToolTip": "src\\Services\\Order.API\\Services\\OrderService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBgAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T13:58:34.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CartApiClient.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\CartApiClient.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\CartApiClient.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\CartApiClient.cs",
+              "RelativeToolTip": "src\\Services\\Order.API\\CartApiClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T11:12:51.641Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CheckoutSagaStateMachine.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\SagaState\\CheckoutSagaStateMachine.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Checkout.API\\SagaState\\CheckoutSagaStateMachine.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\SagaState\\CheckoutSagaStateMachine.cs",
+              "RelativeToolTip": "src\\Services\\Checkout.API\\SagaState\\CheckoutSagaStateMachine.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAFMAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T04:36:03.156Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderEvents.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Shared\\Contracts\\OrderEvents.cs",
+              "RelativeDocumentMoniker": "src\\Shared\\Contracts\\OrderEvents.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Shared\\Contracts\\OrderEvents.cs",
+              "RelativeToolTip": "src\\Shared\\Contracts\\OrderEvents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T11:21:33.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Cart.API.csproj",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Cart.API.csproj",
+              "RelativeDocumentMoniker": "src\\Services\\Cart.API\\Cart.API.csproj",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Cart.API.csproj",
+              "RelativeToolTip": "src\\Services\\Cart.API\\Cart.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-26T10:39:08.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Services\\CartService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Cart.API\\Services\\CartService.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Services\\CartService.cs",
+              "RelativeToolTip": "src\\Services\\Cart.API\\Services\\CartService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAwwCUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:40:33.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Cart.API\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Controllers\\CartController.cs",
+              "RelativeToolTip": "src\\Services\\Cart.API\\Controllers\\CartController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAA7wBEAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:40:45.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrdersController.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Controllers\\OrdersController.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\Controllers\\OrdersController.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Controllers\\OrdersController.cs",
+              "RelativeToolTip": "src\\Services\\Order.API\\Controllers\\OrdersController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAwBQAAABLAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T04:00:40.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Entities\\CartItem.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Cart.API\\Entities\\CartItem.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Entities\\CartItem.cs",
+              "RelativeToolTip": "src\\Services\\Cart.API\\Entities\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:39:22.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Order.API.csproj",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Order.API.csproj",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\Order.API.csproj",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Order.API.csproj",
+              "RelativeToolTip": "src\\Services\\Order.API\\Order.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-26T13:57:38.597Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CartRequest.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\DTO\\CartRequest.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Cart.API\\DTO\\CartRequest.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\DTO\\CartRequest.cs",
+              "RelativeToolTip": "src\\Services\\Cart.API\\DTO\\CartRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:40:08.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Entities\\Order.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\Entities\\Order.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Entities\\Order.cs",
+              "RelativeToolTip": "src\\Services\\Order.API\\Entities\\Order.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T03:58:25.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "OrderResponse.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\DTO\\OrderResponse.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\DTO\\OrderResponse.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\DTO\\OrderResponse.cs",
+              "RelativeToolTip": "src\\Services\\Order.API\\DTO\\OrderResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAACnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T04:00:21.053Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\AppDbContext.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\AppDbContext.cs",
+              "RelativeToolTip": "src\\Services\\Order.API\\AppDbContext.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAswCEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T03:58:39.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Checkout.API\\Program.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\Program.cs",
+              "RelativeToolTip": "src\\Services\\Checkout.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T05:46:29.615Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Identity.API\\Program.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Program.cs",
+              "RelativeToolTip": "src\\Services\\Identity.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T05:56:51.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CheckoutSagaState.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\SagaState\\CheckoutSagaState.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Checkout.API\\SagaState\\CheckoutSagaState.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\SagaState\\CheckoutSagaState.cs",
+              "RelativeToolTip": "src\\Services\\Checkout.API\\SagaState\\CheckoutSagaState.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T04:33:58.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CheckoutDbContext.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\CheckoutDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Checkout.API\\CheckoutDbContext.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\CheckoutDbContext.cs",
+              "RelativeToolTip": "src\\Services\\Checkout.API\\CheckoutDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T04:34:16.31Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\Services\\Checkout.API\\appsettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\appsettings.json",
+              "RelativeToolTip": "src\\Services\\Checkout.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-27T05:46:23.204Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Checkout.API.csproj",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\Checkout.API.csproj",
+              "RelativeDocumentMoniker": "src\\Services\\Checkout.API\\Checkout.API.csproj",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\Checkout.API.csproj",
+              "RelativeToolTip": "src\\Services\\Checkout.API\\Checkout.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-27T04:33:34.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Identity.API\\AppDbContext.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\AppDbContext.cs",
+              "RelativeToolTip": "src\\Services\\Identity.API\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T06:01:00.446Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ReservationTimeoutJob.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\Services\\ReservationTimeoutJob.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Checkout.API\\Services\\ReservationTimeoutJob.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Checkout.API\\Services\\ReservationTimeoutJob.cs",
+              "RelativeToolTip": "src\\Services\\Checkout.API\\Services\\ReservationTimeoutJob.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T04:34:29.656Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CheckoutEvents.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Shared\\Contracts\\CheckoutEvents.cs",
+              "RelativeDocumentMoniker": "src\\Shared\\Contracts\\CheckoutEvents.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Shared\\Contracts\\CheckoutEvents.cs",
+              "RelativeToolTip": "src\\Shared\\Contracts\\CheckoutEvents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T04:33:16.988Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "OrderConfirmedConsumer.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Consumer\\OrderConfirmedConsumer.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\Consumer\\OrderConfirmedConsumer.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Consumer\\OrderConfirmedConsumer.cs",
+              "RelativeToolTip": "src\\Services\\Order.API\\Consumer\\OrderConfirmedConsumer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T04:02:57.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\appsettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\appsettings.json",
+              "RelativeToolTip": "src\\Services\\Order.API\\appsettings.json",
+              "ViewState": "AgIAABAAAAAAAAAAAAAawB4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-27T04:01:08.482Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "OrderCancelledConsumer.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Consumer\\OrderCancelledConsumer.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\Consumer\\OrderCancelledConsumer.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Consumer\\OrderCancelledConsumer.cs",
+              "RelativeToolTip": "src\\Services\\Order.API\\Consumer\\OrderCancelledConsumer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T04:00:02.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Order.API\\Program.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Order.API\\Program.cs",
+              "RelativeToolTip": "src\\Services\\Order.API\\Program.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAIBJwCMAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T14:48:53.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\Program.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Program.cs",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwBUAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T15:31:36.479Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Inventory.API.csproj",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Inventory.API.csproj",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\Inventory.API.csproj",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Inventory.API.csproj",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\Inventory.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-26T15:16:06.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Gateway\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Gateway\\Program.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Gateway\\Program.cs",
+              "RelativeToolTip": "src\\Gateway\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T05:26:43.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Shared.Contracts.csproj",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Shared\\Contracts\\Shared.Contracts.csproj",
+              "RelativeDocumentMoniker": "src\\Shared\\Contracts\\Shared.Contracts.csproj",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Shared\\Contracts\\Shared.Contracts.csproj",
+              "RelativeToolTip": "src\\Shared\\Contracts\\Shared.Contracts.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-26T16:04:08.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "ReserveStockRequestedConsumer.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Consumers\\ReserveStockRequestedConsumer.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\Consumers\\ReserveStockRequestedConsumer.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Consumers\\ReserveStockRequestedConsumer.cs",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\Consumers\\ReserveStockRequestedConsumer.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAwwCYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-27T04:17:23.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\appsettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\appsettings.json",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-27T04:17:37.081Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "InventoryEvents.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Shared\\Contracts\\InventoryEvents.cs",
+              "RelativeDocumentMoniker": "src\\Shared\\Contracts\\InventoryEvents.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Shared\\Contracts\\InventoryEvents.cs",
+              "RelativeToolTip": "src\\Shared\\Contracts\\InventoryEvents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T16:05:29.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "InventoryService.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Services\\InventoryService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\Services\\InventoryService.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Services\\InventoryService.cs",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\Services\\InventoryService.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAswFIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T15:30:10.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "InventoryController.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Controllers\\InventoryController.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\Controllers\\InventoryController.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Controllers\\InventoryController.cs",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\Controllers\\InventoryController.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAswAUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T15:30:52.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "InventoryProjectionWorker.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Worker\\InventoryProjectionWorker.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\Worker\\InventoryProjectionWorker.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Worker\\InventoryProjectionWorker.cs",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\Worker\\InventoryProjectionWorker.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAwwFYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T15:29:40.636Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Gateway\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\Gateway\\appsettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Gateway\\appsettings.json",
+              "RelativeToolTip": "src\\Gateway\\appsettings.json",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAawH4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-26T05:27:01.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "InventoryRepository.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Repository\\InventoryRepository.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\Repository\\InventoryRepository.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Repository\\InventoryRepository.cs",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\Repository\\InventoryRepository.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAwwEIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T15:24:47.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "InventoryAggregate.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Aggregate\\InventoryAggregate.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\Aggregate\\InventoryAggregate.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Aggregate\\InventoryAggregate.cs",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\Aggregate\\InventoryAggregate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T15:23:17.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "InventoryEvents.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Events\\InventoryEvents.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\Events\\InventoryEvents.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Events\\InventoryEvents.cs",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\Events\\InventoryEvents.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T15:22:38.72Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Gateway.csproj",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Gateway\\Gateway.csproj",
+              "RelativeDocumentMoniker": "src\\Gateway\\Gateway.csproj",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Gateway\\Gateway.csproj",
+              "RelativeToolTip": "src\\Gateway\\Gateway.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-26T05:26:17.389Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-26T15:31:51.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "InventoryReadModel.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\ReadModel\\InventoryReadModel.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Inventory.API\\ReadModel\\InventoryReadModel.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Inventory.API\\ReadModel\\InventoryReadModel.cs",
+              "RelativeToolTip": "src\\Services\\Inventory.API\\ReadModel\\InventoryReadModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T15:26:00.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Catalog.API.csproj",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Catalog.API.csproj",
+              "RelativeDocumentMoniker": "src\\Services\\Catalog.API\\Catalog.API.csproj",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Catalog.API.csproj",
+              "RelativeToolTip": "src\\Services\\Catalog.API\\Catalog.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-26T10:06:52.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "Identity.API.csproj",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Identity.API.csproj",
+              "RelativeDocumentMoniker": "src\\Services\\Identity.API\\Identity.API.csproj",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Identity.API.csproj",
+              "RelativeToolTip": "src\\Services\\Identity.API\\Identity.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-26T05:56:47.064Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Catalog.API\\Program.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Program.cs",
+              "RelativeToolTip": "src\\Services\\Catalog.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBpwB0AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:08:40.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Entity\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Identity.API\\Entity\\RefreshToken.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Entity\\RefreshToken.cs",
+              "RelativeToolTip": "src\\Services\\Identity.API\\Entity\\RefreshToken.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T06:04:06.179Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Program.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Cart.API\\Program.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Program.cs",
+              "RelativeToolTip": "src\\Services\\Cart.API\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:41:04.315Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\Services\\Cart.API\\appsettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\appsettings.json",
+              "RelativeToolTip": "src\\Services\\Cart.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-26T10:40:59.414Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "src\\Services\\Cart.API\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "src\\Services\\Cart.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-26T10:41:16.004Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "Cart.API",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Cart.API.csproj",
+              "RelativeDocumentMoniker": "src\\Services\\Cart.API\\Cart.API.csproj",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Cart.API\\Cart.API.csproj",
+              "RelativeToolTip": "src\\Services\\Cart.API\\Cart.API.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-07-26T10:41:13.653Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "src\\Services\\Catalog.API\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "src\\Services\\Catalog.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-26T10:08:49.452Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "CatalogService.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Services\\CatalogService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Catalog.API\\Services\\CatalogService.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Services\\CatalogService.cs",
+              "RelativeToolTip": "src\\Services\\Catalog.API\\Services\\CatalogService.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAcwBMAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:07:41.738Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "MongoContext.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\MongoContext.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Catalog.API\\MongoContext.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\MongoContext.cs",
+              "RelativeToolTip": "src\\Services\\Catalog.API\\MongoContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:06:58.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Schema\\Product.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Catalog.API\\Schema\\Product.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Schema\\Product.cs",
+              "RelativeToolTip": "src\\Services\\Catalog.API\\Schema\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:06:40.484Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "RabbitMqPublisher.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\RabbitMqPublisher.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Catalog.API\\RabbitMqPublisher.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\RabbitMqPublisher.cs",
+              "RelativeToolTip": "src\\Services\\Catalog.API\\RabbitMqPublisher.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:07:14.353Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\Services\\Catalog.API\\appsettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\appsettings.json",
+              "RelativeToolTip": "src\\Services\\Catalog.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-26T10:08:31.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Catalog.API\\Controllers\\ProductsController.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "src\\Services\\Catalog.API\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAqwEgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:08:23.677Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "ProductRequest.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\DTO\\ProductRequest.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Catalog.API\\DTO\\ProductRequest.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Catalog.API\\DTO\\ProductRequest.cs",
+              "RelativeToolTip": "src\\Services\\Catalog.API\\DTO\\ProductRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T10:08:11.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "IdentityController.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Controller\\IdentityController.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Identity.API\\Controller\\IdentityController.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Controller\\IdentityController.cs",
+              "RelativeToolTip": "src\\Services\\Identity.API\\Controller\\IdentityController.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAYwAYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T06:10:14.91Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Service\\TokenService.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Identity.API\\Service\\TokenService.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Service\\TokenService.cs",
+              "RelativeToolTip": "src\\Services\\Identity.API\\Service\\TokenService.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T06:04:54.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "src\\Services\\Identity.API\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "src\\Services\\Identity.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-26T09:42:46.371Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\appsettings.json",
+              "RelativeDocumentMoniker": "src\\Services\\Identity.API\\appsettings.json",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\appsettings.json",
+              "RelativeToolTip": "src\\Services\\Identity.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-26T06:01:31.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "Requests.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Models\\Requests.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Identity.API\\Models\\Requests.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Models\\Requests.cs",
+              "RelativeToolTip": "src\\Services\\Identity.API\\Models\\Requests.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T06:09:21.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Entity\\User.cs",
+              "RelativeDocumentMoniker": "src\\Services\\Identity.API\\Entity\\User.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Services\\Identity.API\\Entity\\User.cs",
+              "RelativeToolTip": "src\\Services\\Identity.API\\Entity\\User.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBgAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T06:00:27.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "Extensions.cs",
+              "DocumentMoniker": "D:\\SimpleEcommerce\\src\\Shared\\ServiceDefaults\\Extensions.cs",
+              "RelativeDocumentMoniker": "src\\Shared\\ServiceDefaults\\Extensions.cs",
+              "ToolTip": "D:\\SimpleEcommerce\\src\\Shared\\ServiceDefaults\\Extensions.cs",
+              "RelativeToolTip": "src\\Shared\\ServiceDefaults\\Extensions.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAmwF8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-26T05:13:35.768Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 176,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 1908,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

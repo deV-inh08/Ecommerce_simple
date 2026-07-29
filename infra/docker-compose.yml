@@ -1,0 +1,186 @@
+name: simplestore
+
+networks:
+  simplestore-network:
+    driver: bridge
+
+volumes:
+  sqlserver_data:
+  mongo_data:
+  redis_data:
+  rabbitmq_data:
+  kurrentdb_data:
+
+services:
+
+  # ---------------------------------------------------------------
+  # SQL Server — Identity.API, Order.API, Checkout.API
+  # ---------------------------------------------------------------
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: simplestore-sqlserver
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: ${SQLSERVER_SA_PASSWORD:-YourStrong!Passw0rd}
+      MSSQL_PID: Developer
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver_data:/var/opt/mssql
+    networks:
+      - simplestore-network
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P \"$$MSSQL_SA_PASSWORD\" -C -Q 'SELECT 1' || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+    restart: unless-stopped
+
+  # One-off job: tạo database cho từng service khi sqlserver đã healthy.
+  # Container này tự thoát sau khi chạy xong (không phải service chạy mãi).
+  # Dùng entrypoint dạng MẢNG (không phải chuỗi multi-line) để tránh lỗi khi
+  # file này được lưu/tải với line ending kiểu Windows (CRLF).
+  sqlserver-init:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: simplestore-sqlserver-init
+    depends_on:
+      sqlserver:
+        condition: service_healthy
+    networks:
+      - simplestore-network
+    volumes:
+      - ./init-scripts/sqlserver:/scripts:ro
+    environment:
+      SQLCMDPASSWORD: ${SQLSERVER_SA_PASSWORD:-YourStrong!Passw0rd}
+    entrypoint: ["/opt/mssql-tools18/bin/sqlcmd", "-S", "sqlserver", "-U", "sa", "-C", "-i", "/scripts/init.sql"]
+    restart: "no"
+
+  # ---------------------------------------------------------------
+  # MongoDB — Catalog.API (write side) & Inventory.API (read model)
+  # ---------------------------------------------------------------
+  mongodb:
+    image: mongo:7
+    container_name: simplestore-mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USER:-root}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD:-YourStrong!Passw0rd}
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+      - ./init-scripts/mongo:/docker-entrypoint-initdb.d:ro
+    networks:
+      - simplestore-network
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------
+  # Redis — Cart.API state, Catalog.API cache-aside, distributed lock
+  # ---------------------------------------------------------------
+  redis:
+    image: redis:7-alpine
+    container_name: simplestore-redis
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - simplestore-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------
+  # RabbitMQ — Message broker giữa các service
+  # ---------------------------------------------------------------
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: simplestore-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER:-guest}
+      RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD:-guest}
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - simplestore-network
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------
+  # KurrentDB (EventStoreDB) — Inventory.API write side (Event Sourcing)
+  # ---------------------------------------------------------------
+  kurrentdb:
+    image: kurrentplatform/kurrentdb:latest
+    container_name: simplestore-kurrentdb
+    environment:
+      KURRENTDB_CLUSTER_SIZE: 1
+      KURRENTDB_RUN_PROJECTIONS: All
+      KURRENTDB_START_STANDARD_PROJECTIONS: "true"
+      KURRENTDB_INSECURE: "true"
+      KURRENTDB_ENABLE_ATOM_PUB_OVER_HTTP: "true"
+    ports:
+      - "2113:2113"
+      - "1113:1113"
+    volumes:
+      - kurrentdb_data:/var/lib/kurrentdb
+    networks:
+      - simplestore-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:2113/health/live"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------
+  # Jaeger — Distributed tracing (nhận OTel traces từ mọi service)
+  # ---------------------------------------------------------------
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: simplestore-jaeger
+    environment:
+      COLLECTOR_OTLP_ENABLED: "true"
+    ports:
+      - "16686:16686"
+      - "4317:4317"
+      - "4318:4318"
+    networks:
+      - simplestore-network
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------
+  # Seq (structured log aggregation) — TẠM BỎ, sẽ thêm lại sau khi
+  # debug xong lý do crash trên môi trường Windows/Docker Desktop.
+  # Jaeger đã đủ để xem trace ở giai đoạn hiện tại.
+  # ---------------------------------------------------------------
+  # seq:
+  #   image: datalust/seq:latest
+  #   container_name: simplestore-seq
+  #   environment:
+  #     ACCEPT_EULA: "Y"
+  #   ports:
+  #     - "5341:80"
+  #   volumes:
+  #     - seq_data:/data
+  #   networks:
+  #     - simplestore-network
+  #   restart: unless-stopped

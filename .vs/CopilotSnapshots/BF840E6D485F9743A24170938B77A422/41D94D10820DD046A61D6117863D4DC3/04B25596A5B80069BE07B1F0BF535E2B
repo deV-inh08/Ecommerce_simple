@@ -1,0 +1,92 @@
+﻿using MassTransit;
+using Quartz;
+using Shared.Contracts;
+
+namespace Checkout.API.SagaState;
+
+public class CheckoutSagaStateMachine : MassTransitStateMachine<CheckoutSagaState>
+{
+    private readonly ISchedulerFactory _schedulerFactory;
+
+    public State AwaitingStock { get; private set; } = default!;
+
+    public Event<OrderSubmittedEvent> OrderSubmitted { get; private set; } = default!;
+    public Event<StockReservedEvent> StockReserved { get; private set; } = default!;
+    public Event<StockReservationFailedEvent> StockReservationFailed { get; private set; } = default!;
+    public Event<ReservationTimeoutExpired> TimeoutExpired { get; private set; } = default!;
+
+    public CheckoutSagaStateMachine(ISchedulerFactory schedulerFactory)
+    {
+        _schedulerFactory = schedulerFactory;
+
+        InstanceState(x => x.CurrentState);
+
+        Event(() => OrderSubmitted, x => x.CorrelateById(m => m.Message.OrderId));
+        Event(() => StockReserved, x => x.CorrelateById(m => m.Message.OrderId));
+        Event(() => StockReservationFailed, x => x.CorrelateById(m => m.Message.OrderId));
+        Event(() => TimeoutExpired, x => x.CorrelateById(m => m.Message.OrderId));
+
+        Initially(
+            When(OrderSubmitted)
+                .Then(context =>
+                {
+                    context.Saga.UserId = context.Message.UserId;
+                    context.Saga.TotalAmount = context.Message.TotalAmount;
+                })
+                .Publish(context => new ReserveStockRequestedEvent(
+                    context.Message.OrderId,
+                    context.Message.Items.Select(i => new StockReservationItem(i.Sku, i.Quantity)).ToList(),
+                    DateTime.UtcNow))
+                .ThenAsync(context => ScheduleTimeoutAsync(context.Saga.CorrelationId))
+                .TransitionTo(AwaitingStock)
+        );
+
+        During(AwaitingStock,
+            When(StockReserved)
+                .ThenAsync(context => CancelTimeoutAsync(context.Saga.CorrelationId))
+                .Publish(context => new OrderConfirmedEvent(context.Saga.CorrelationId, DateTime.UtcNow))
+                .Finalize(),
+
+            When(StockReservationFailed)
+                .ThenAsync(context => CancelTimeoutAsync(context.Saga.CorrelationId))
+                .Publish(context => new OrderCancelledEvent(context.Saga.CorrelationId, context.Message.Reason, DateTime.UtcNow))
+                .Finalize(),
+
+            // Không cần huỷ Quartz job ở nhánh này — job đã tự bắn xong (đó là lý do ta ở đây).
+            When(TimeoutExpired)
+                .Publish(context => new OrderCancelledEvent(
+                    context.Saga.CorrelationId,
+                    "Timeout: không nhận được phản hồi từ Inventory trong 30 giây",
+                    DateTime.UtcNow))
+                .Finalize()
+        );
+
+        // Khi Finalize() chạy, MassTransit tự XOÁ dòng saga state khỏi DB —
+        // saga đã hoàn tất vòng đời, không cần giữ lại (khác Order.API, nơi
+        // CustomerOrder vẫn giữ nguyên vĩnh viễn làm lịch sử đơn hàng).
+        SetCompletedWhenFinalized();
+    }
+
+    private async Task ScheduleTimeoutAsync(Guid orderId)
+    {
+        var scheduler = await _schedulerFactory.GetScheduler();
+
+        var job = JobBuilder.Create<ReservationTimeoutJob>()
+            .WithIdentity($"timeout-{orderId}")
+            .UsingJobData("OrderId", orderId.ToString())
+            .Build();
+
+        var trigger = TriggerBuilder.Create()
+            .WithIdentity($"timeout-trigger-{orderId}")
+            .StartAt(DateBuilder.FutureDate(30, IntervalUnit.Second))
+            .Build();
+
+        await scheduler.ScheduleJob(job, trigger);
+    }
+
+    private async Task CancelTimeoutAsync(Guid orderId)
+    {
+        var scheduler = await _schedulerFactory.GetScheduler();
+        await scheduler.DeleteJob(new JobKey($"timeout-{orderId}"));
+    }
+}

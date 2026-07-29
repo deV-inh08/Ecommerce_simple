@@ -1,0 +1,11 @@
+D:\SimpleEcommerce\src\Shared\Contracts\bin\Debug\net10.0\Shared.Contracts.deps.json
+D:\SimpleEcommerce\src\Shared\Contracts\bin\Debug\net10.0\Shared.Contracts.dll
+D:\SimpleEcommerce\src\Shared\Contracts\bin\Debug\net10.0\Shared.Contracts.pdb
+D:\SimpleEcommerce\src\Shared\Contracts\obj\Debug\net10.0\Shared.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+D:\SimpleEcommerce\src\Shared\Contracts\obj\Debug\net10.0\Shared.Contracts.AssemblyInfoInputs.cache
+D:\SimpleEcommerce\src\Shared\Contracts\obj\Debug\net10.0\Shared.Contracts.AssemblyInfo.cs
+D:\SimpleEcommerce\src\Shared\Contracts\obj\Debug\net10.0\Shared.Contracts.csproj.CoreCompileInputs.cache
+D:\SimpleEcommerce\src\Shared\Contracts\obj\Debug\net10.0\Shared.Contracts.dll
+D:\SimpleEcommerce\src\Shared\Contracts\obj\Debug\net10.0\refint\Shared.Contracts.dll
+D:\SimpleEcommerce\src\Shared\Contracts\obj\Debug\net10.0\Shared.Contracts.pdb
+D:\SimpleEcommerce\src\Shared\Contracts\obj\Debug\net10.0\ref\Shared.Contracts.dll
