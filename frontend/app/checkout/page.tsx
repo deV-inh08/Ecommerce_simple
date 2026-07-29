@@ -1,65 +1,41 @@
 "use client";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { ChevronDown, CreditCard, Check, Lock, Truck } from "lucide-react";
+import { ChevronDown, CreditCard, Check, Lock, Truck, AlertCircle } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useStore } from "../context/StoreContext";
+import { useStore } from "../store/useStoreZustand";
+import { useCheckout } from "../hooks/useOrders";
+import { useOrder } from "../hooks/useOrders";
 
 /* ─── Helpers ────────────────────────────────────────────── */
 function Label({ children }: { children: React.ReactNode }) {
   return <label className="text-xs font-semibold text-gray-600 block mb-1">{children}</label>;
 }
 
-function Input({
-  id, placeholder, type = "text", value, onChange, className = "",
-}: {
-  id: string; placeholder: string; type?: string;
-  value: string; onChange: (v: string) => void; className?: string;
-}) {
-  return (
-    <input
-      id={id} type={type} placeholder={placeholder} value={value}
-      onChange={(e) => onChange(e.target.value)}
-      className={`w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all ${className}`}
-      style={{ border: "1.5px solid #e5e7eb", color: "#111" }}
-      onFocus={(e) => { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; }}
-      onBlur={(e)  => { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; }}
-    />
-  );
-}
-
-function Select({
-  id, value, onChange, options,
-}: {
-  id: string; value: string; onChange: (v: string) => void; options: string[];
-}) {
-  return (
-    <div className="relative">
-      <select
-        id={id} value={value} onChange={(e) => onChange(e.target.value)}
-        className="w-full px-3 py-2.5 text-sm rounded-xl outline-none appearance-none transition-all bg-white"
-        style={{ border: "1.5px solid #e5e7eb", color: value ? "#111" : "#9ca3af" }}
-        onFocus={(e) => { e.target.style.borderColor = "#0d5c5c"; }}
-        onBlur={(e)  => { e.target.style.borderColor = "#e5e7eb"; }}
-      >
-        {options.map((o) => <option key={o} value={o}>{o}</option>)}
-      </select>
-      <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
-    </div>
-  );
+/* ─── Card form data ─────────────────────────────────────── */
+interface CardFormData {
+  cardNum: string;
+  expiry: string;
+  cvv: string;
+  firstName: string;
+  lastName: string;
+  remember: boolean;
 }
 
 /* ─── Card form (collapsible) ────────────────────────────── */
 function CardForm({
   open, onDone, onCancel,
 }: { open: boolean; onDone: () => void; onCancel: () => void }) {
-  const [cardNum, setCardNum]       = useState("");
-  const [expiry, setExpiry]         = useState("");
-  const [cvv, setCvv]               = useState("");
-  const [firstName, setFirstName]   = useState("");
-  const [lastName, setLastName]     = useState("");
-  const [remember, setRemember]     = useState(false);
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    formState: { errors },
+  } = useForm<CardFormData>({
+    defaultValues: { cardNum: "", expiry: "", cvv: "", firstName: "", lastName: "", remember: false },
+  });
 
   const formatCard = (v: string) =>
     v.replace(/\D/g, "").slice(0, 16).replace(/(.{4})/g, "$1 ").trim();
@@ -68,117 +44,204 @@ function CardForm({
 
   if (!open) return null;
   return (
-    <div className="mt-4 flex flex-col gap-3">
+    <form onSubmit={handleSubmit(() => onDone())} className="mt-4 flex flex-col gap-3">
       <div>
         <Label>Card number</Label>
-        <Input id="card-number" placeholder="1234 5678 9012 3456" value={cardNum}
-          onChange={(v) => setCardNum(formatCard(v))} />
+        <input
+          id="card-number" placeholder="1234 5678 9012 3456"
+          {...register("cardNum", { required: "Card number is required" })}
+          onChange={(e) => setValue("cardNum", formatCard(e.target.value))}
+          className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+          style={{ border: `1.5px solid ${errors.cardNum ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+          onFocus={(e) => { if (!errors.cardNum) { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; } }}
+          onBlur={(e)  => { if (!errors.cardNum) { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; } }}
+        />
+        {errors.cardNum && <p className="text-xs text-red-500 mt-1">{errors.cardNum.message}</p>}
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div>
           <Label>Expiration date</Label>
-          <Input id="card-expiry" placeholder="MM/YY" value={expiry}
-            onChange={(v) => setExpiry(formatExpiry(v))} />
+          <input
+            id="card-expiry" placeholder="MM/YY"
+            {...register("expiry", { required: "Required" })}
+            onChange={(e) => setValue("expiry", formatExpiry(e.target.value))}
+            className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+            style={{ border: `1.5px solid ${errors.expiry ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+            onFocus={(e) => { if (!errors.expiry) { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; } }}
+            onBlur={(e)  => { if (!errors.expiry) { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; } }}
+          />
+          {errors.expiry && <p className="text-xs text-red-500 mt-1">{errors.expiry.message}</p>}
         </div>
         <div>
           <Label>Security code</Label>
-          <Input id="card-cvv" placeholder="CVV" value={cvv}
-            onChange={(v) => setCvv(v.replace(/\D/g,"").slice(0,4))} />
+          <input
+            id="card-cvv" placeholder="CVV"
+            {...register("cvv", { required: "Required" })}
+            onChange={(e) => setValue("cvv", e.target.value.replace(/\D/g, "").slice(0, 4))}
+            className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+            style={{ border: `1.5px solid ${errors.cvv ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+            onFocus={(e) => { if (!errors.cvv) { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; } }}
+            onBlur={(e)  => { if (!errors.cvv) { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; } }}
+          />
+          {errors.cvv && <p className="text-xs text-red-500 mt-1">{errors.cvv.message}</p>}
         </div>
       </div>
       <div className="grid grid-cols-2 gap-3">
         <div>
           <Label>First name</Label>
-          <Input id="card-fname" placeholder="John" value={firstName} onChange={setFirstName} />
+          <input
+            id="card-fname" placeholder="John"
+            {...register("firstName", { required: "Required" })}
+            className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+            style={{ border: `1.5px solid ${errors.firstName ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+            onFocus={(e) => { if (!errors.firstName) { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; } }}
+            onBlur={(e)  => { if (!errors.firstName) { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; } }}
+          />
+          {errors.firstName && <p className="text-xs text-red-500 mt-1">{errors.firstName.message}</p>}
         </div>
         <div>
           <Label>Last name</Label>
-          <Input id="card-lname" placeholder="Doe" value={lastName} onChange={setLastName} />
+          <input
+            id="card-lname" placeholder="Doe"
+            {...register("lastName", { required: "Required" })}
+            className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+            style={{ border: `1.5px solid ${errors.lastName ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+            onFocus={(e) => { if (!errors.lastName) { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; } }}
+            onBlur={(e)  => { if (!errors.lastName) { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; } }}
+          />
+          {errors.lastName && <p className="text-xs text-red-500 mt-1">{errors.lastName.message}</p>}
         </div>
       </div>
       <label className="flex items-center gap-2 cursor-pointer select-none">
-        <input type="checkbox" id="card-remember" checked={remember}
-          onChange={(e) => setRemember(e.target.checked)}
+        <input type="checkbox" id="card-remember"
+          {...register("remember")}
           className="w-3.5 h-3.5 rounded accent-[#0d5c5c]" />
         <span className="text-xs text-gray-500">Remember this card for future order</span>
       </label>
       <div className="flex gap-3 pt-1">
-        <button id="card-done" onClick={onDone}
+        <button id="card-done" type="submit"
           className="px-6 py-2 text-sm font-bold text-white rounded-xl hover:opacity-90 transition-opacity"
           style={{ backgroundColor: "#0d5c5c" }}>
           Done
         </button>
-        <button id="card-cancel" onClick={onCancel}
+        <button id="card-cancel" type="button" onClick={onCancel}
           className="px-6 py-2 text-sm font-semibold rounded-xl hover:bg-gray-100 transition-colors"
           style={{ border: "1.5px solid #e5e7eb", color: "#374151" }}>
           Cancel
         </button>
       </div>
-    </div>
+    </form>
   );
+}
+
+/* ─── Billing form data ──────────────────────────────────── */
+interface BillingFormData {
+  email: string;
+  deliverTo: string;
+  country: string;
+  firstName: string;
+  lastName: string;
+  address: string;
+  city: string;
+  state: string;
+  zip: string;
+  phone: string;
+  note: string;
 }
 
 /* ─── Checkout Page ──────────────────────────────────────── */
 export default function CheckoutPage() {
   const { cartItems, cartTotal } = useStore();
 
-  // Billing state
-  const [email, setEmail]         = useState("");
-  const [deliverTo, setDeliverTo] = useState("Residence");
-  const [country, setCountry]     = useState("United States");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName]   = useState("");
-  const [address, setAddress]     = useState("");
-  const [city, setCity]           = useState("");
-  const [state, setState]         = useState("Select state");
-  const [zip, setZip]             = useState("");
-  const [phone, setPhone]         = useState("");
-  const [note, setNote]           = useState("");
+  // React Hook Form for billing
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors },
+  } = useForm<BillingFormData>({
+    defaultValues: {
+      email: "", deliverTo: "Residence", country: "United States",
+      firstName: "", lastName: "", address: "", city: "",
+      state: "Select state", zip: "", phone: "", note: "",
+    },
+  });
 
   // Payment state
   const [payMethod, setPayMethod]     = useState<"card" | "paypal">("card");
   const [cardOpen, setCardOpen]       = useState(true);
   const [cardSaved, setCardSaved]     = useState(false);
-  const [placed, setPlaced]           = useState(false);
+  const [placedOrderId, setPlacedOrderId] = useState<string | null>(null);
 
-  // Pricing
+  const checkoutMutation = useCheckout();
+  // Poll order status while Pending (saga can take up to 30s)
+  const { data: placedOrder } = useOrder(placedOrderId ?? "");
+
+  const email = watch("email");
   const originalTotal  = cartItems.reduce((s, i) => s + (i.originalPrice ?? i.price) * i.qty, 0);
   const savings        = originalTotal - cartTotal;
   const shipping       = cartTotal >= 50 ? 0 : 9.99;
   const estimatedTax   = +(cartTotal * 0.08).toFixed(2);
   const orderTotal     = +(cartTotal + shipping + estimatedTax).toFixed(2);
 
-  const handlePlaceOrder = () => {
-    if (!email || !firstName || !lastName || !address) return;
-    setPlaced(true);
+  const onSubmitBilling = async () => {
+    try {
+      const order = await checkoutMutation.mutateAsync();
+      setPlacedOrderId(order.id);
+    } catch {
+      // error handled below
+    }
   };
 
-  /* ── Order placed screen ── */
-  if (placed) {
+  /* ── Order placed / polling screen ── */
+  if (placedOrderId) {
+    const status = placedOrder?.status;
+    const isPending = !status || status === "Pending";
+    const isConfirmed = status === "Confirmed";
+    const isCancelled = status === "Cancelled";
     return (
       <div className="flex flex-col min-h-screen w-full bg-white">
         <Header />
         <main className="flex-1 flex items-center justify-center">
           <div className="text-center flex flex-col items-center gap-5 py-20">
-            <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ backgroundColor: "#e8f5f0" }}>
-              <Check size={36} style={{ color: "#0d5c5c" }} />
-            </div>
-            <div>
-              <h1 className="text-3xl font-extrabold text-gray-900 mb-2">Order Placed! 🎉</h1>
-              <p className="text-sm text-gray-400">Thank you for your purchase. We&apos;ll send a confirmation to <strong>{email}</strong></p>
-            </div>
-            <div className="flex gap-4">
-              <Link href="/"
-                className="px-7 py-3 text-sm font-bold text-white rounded-xl hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#0d5c5c" }}>
-                Continue Shopping
-              </Link>
-              <Link href="/wishlist"
-                className="px-7 py-3 text-sm font-bold rounded-xl hover:bg-gray-50 transition-colors"
-                style={{ border: "1.5px solid #e5e7eb", color: "#374151" }}>
-                View Wishlist
-              </Link>
-            </div>
+            {isPending && (
+              <>
+                <span className="w-16 h-16 border-4 border-[#0d5c5c] border-t-transparent rounded-full animate-spin" />
+                <div>
+                  <h1 className="text-2xl font-extrabold text-gray-900 mb-2">Processing your order…</h1>
+                  <p className="text-sm text-gray-400">The checkout saga is reserving stock. This may take up to 30 seconds.</p>
+                  <p className="text-xs text-gray-300 mt-1">Order ID: {placedOrderId}</p>
+                </div>
+              </>
+            )}
+            {isConfirmed && (
+              <>
+                <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ backgroundColor: "#e8f5f0" }}>
+                  <Check size={36} style={{ color: "#0d5c5c" }} />
+                </div>
+                <div>
+                  <h1 className="text-3xl font-extrabold text-gray-900 mb-2">Order Confirmed! 🎉</h1>
+                  <p className="text-sm text-gray-400">We&apos;ll send a confirmation to <strong>{email}</strong></p>
+                  <p className="text-xs text-gray-300 mt-1">Order ID: {placedOrderId}</p>
+                </div>
+                <div className="flex gap-4">
+                  <Link href="/" className="px-7 py-3 text-sm font-bold text-white rounded-xl hover:opacity-90 transition-opacity" style={{ backgroundColor: "#0d5c5c" }}>Continue Shopping</Link>
+                </div>
+              </>
+            )}
+            {isCancelled && (
+              <>
+                <div className="w-20 h-20 rounded-full flex items-center justify-center" style={{ backgroundColor: "#fef2f2" }}>
+                  <AlertCircle size={36} style={{ color: "#dc2626" }} />
+                </div>
+                <div>
+                  <h1 className="text-3xl font-extrabold text-gray-900 mb-2">Order Cancelled</h1>
+                  <p className="text-sm text-gray-500">{placedOrder?.cancelledReason ?? "Stock could not be reserved."}</p>
+                </div>
+                <Link href="/cart" className="px-7 py-3 text-sm font-bold rounded-xl hover:bg-gray-50 transition-colors" style={{ border: "1.5px solid #e5e7eb", color: "#374151" }}>Back to Cart</Link>
+              </>
+            )}
           </div>
         </main>
         <Footer />
@@ -209,67 +272,156 @@ export default function CheckoutPage() {
             <div>
               <h1 className="text-2xl font-extrabold text-gray-900 mb-6">Billing details</h1>
 
-              <div className="flex flex-col gap-4">
+              <form id="billing-form" onSubmit={handleSubmit(onSubmitBilling)} className="flex flex-col gap-4">
                 {/* Email */}
                 <div>
                   <Label>Email address *</Label>
-                  <Input id="checkout-email" placeholder="you@example.com" type="email" value={email} onChange={setEmail} />
+                  <input
+                    id="checkout-email" type="email" placeholder="you@example.com"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email" },
+                    })}
+                    className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+                    style={{ border: `1.5px solid ${errors.email ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+                    onFocus={(e) => { if (!errors.email) { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; } }}
+                    onBlur={(e)  => { if (!errors.email) { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; } }}
+                  />
+                  {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>}
                 </div>
 
                 {/* Deliver to */}
                 <div>
                   <Label>Deliver to</Label>
-                  <Select id="deliver-to" value={deliverTo} onChange={setDeliverTo}
-                    options={["Residence", "Office / Business", "Hotel", "Other"]} />
+                  <div className="relative">
+                    <select
+                      id="deliver-to"
+                      {...register("deliverTo")}
+                      className="w-full px-3 py-2.5 text-sm rounded-xl outline-none appearance-none transition-all bg-white"
+                      style={{ border: "1.5px solid #e5e7eb", color: "#111" }}
+                      onFocus={(e) => { e.target.style.borderColor = "#0d5c5c"; }}
+                      onBlur={(e)  => { e.target.style.borderColor = "#e5e7eb"; }}
+                    >
+                      {["Residence", "Office / Business", "Hotel", "Other"].map((o) => <option key={o} value={o}>{o}</option>)}
+                    </select>
+                    <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                  </div>
                 </div>
 
                 {/* Country */}
                 <div>
                   <Label>Country</Label>
-                  <Select id="checkout-country" value={country} onChange={setCountry}
-                    options={["United States", "United Kingdom", "Canada", "Australia", "Vietnam", "Germany", "France", "Japan"]} />
+                  <div className="relative">
+                    <select
+                      id="checkout-country"
+                      {...register("country")}
+                      className="w-full px-3 py-2.5 text-sm rounded-xl outline-none appearance-none transition-all bg-white"
+                      style={{ border: "1.5px solid #e5e7eb", color: "#111" }}
+                      onFocus={(e) => { e.target.style.borderColor = "#0d5c5c"; }}
+                      onBlur={(e)  => { e.target.style.borderColor = "#e5e7eb"; }}
+                    >
+                      {["United States", "United Kingdom", "Canada", "Australia", "Vietnam", "Germany", "France", "Japan"].map((o) => <option key={o} value={o}>{o}</option>)}
+                    </select>
+                    <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                  </div>
                 </div>
 
                 {/* Name */}
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <Label>Your first name *</Label>
-                    <Input id="checkout-fname" placeholder="John" value={firstName} onChange={setFirstName} />
+                    <input
+                      id="checkout-fname" placeholder="John"
+                      {...register("firstName", { required: "First name is required" })}
+                      className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+                      style={{ border: `1.5px solid ${errors.firstName ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+                      onFocus={(e) => { if (!errors.firstName) { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; } }}
+                      onBlur={(e)  => { if (!errors.firstName) { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; } }}
+                    />
+                    {errors.firstName && <p className="text-xs text-red-500 mt-1">{errors.firstName.message}</p>}
                   </div>
                   <div>
                     <Label>Your last name *</Label>
-                    <Input id="checkout-lname" placeholder="Doe" value={lastName} onChange={setLastName} />
+                    <input
+                      id="checkout-lname" placeholder="Doe"
+                      {...register("lastName", { required: "Last name is required" })}
+                      className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+                      style={{ border: `1.5px solid ${errors.lastName ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+                      onFocus={(e) => { if (!errors.lastName) { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; } }}
+                      onBlur={(e)  => { if (!errors.lastName) { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; } }}
+                    />
+                    {errors.lastName && <p className="text-xs text-red-500 mt-1">{errors.lastName.message}</p>}
                   </div>
                 </div>
 
                 {/* Address */}
                 <div>
                   <Label>Your address *</Label>
-                  <Input id="checkout-address" placeholder="123 Main Street, Apt 4B" value={address} onChange={setAddress} />
+                  <input
+                    id="checkout-address" placeholder="123 Main Street, Apt 4B"
+                    {...register("address", { required: "Address is required" })}
+                    className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+                    style={{ border: `1.5px solid ${errors.address ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+                    onFocus={(e) => { if (!errors.address) { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; } }}
+                    onBlur={(e)  => { if (!errors.address) { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; } }}
+                  />
+                  {errors.address && <p className="text-xs text-red-500 mt-1">{errors.address.message}</p>}
                 </div>
 
                 {/* City / State / Zip */}
                 <div className="grid gap-3" style={{ gridTemplateColumns: "1fr 1fr 120px" }}>
                   <div>
                     <Label>City</Label>
-                    <Input id="checkout-city" placeholder="New York" value={city} onChange={setCity} />
+                    <input
+                      id="checkout-city" placeholder="New York"
+                      {...register("city")}
+                      className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+                      style={{ border: "1.5px solid #e5e7eb", color: "#111" }}
+                      onFocus={(e) => { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; }}
+                      onBlur={(e)  => { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; }}
+                    />
                   </div>
                   <div>
                     <Label>State</Label>
-                    <Select id="checkout-state" value={state} onChange={setState}
-                      options={["Select state","Alabama","Alaska","Arizona","California","Colorado","Florida","Georgia","Illinois","New York","Texas","Washington"]} />
+                    <div className="relative">
+                      <select
+                        id="checkout-state"
+                        {...register("state")}
+                        className="w-full px-3 py-2.5 text-sm rounded-xl outline-none appearance-none transition-all bg-white"
+                        style={{ border: "1.5px solid #e5e7eb", color: "#111" }}
+                        onFocus={(e) => { e.target.style.borderColor = "#0d5c5c"; }}
+                        onBlur={(e)  => { e.target.style.borderColor = "#e5e7eb"; }}
+                      >
+                        {["Select state","Alabama","Alaska","Arizona","California","Colorado","Florida","Georgia","Illinois","New York","Texas","Washington"].map((o) => <option key={o} value={o}>{o}</option>)}
+                      </select>
+                      <ChevronDown size={14} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none" />
+                    </div>
                   </div>
                   <div>
                     <Label>Zip code</Label>
-                    <Input id="checkout-zip" placeholder="10001" value={zip}
-                      onChange={(v) => setZip(v.replace(/\D/g,"").slice(0,5))} />
+                    <input
+                      id="checkout-zip" placeholder="10001"
+                      {...register("zip")}
+                      onChange={(e) => setValue("zip", e.target.value.replace(/\D/g, "").slice(0, 5))}
+                      className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+                      style={{ border: "1.5px solid #e5e7eb", color: "#111" }}
+                      onFocus={(e) => { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; }}
+                      onBlur={(e)  => { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; }}
+                    />
                   </div>
                 </div>
 
                 {/* Phone */}
                 <div>
                   <Label>Your phone number</Label>
-                  <Input id="checkout-phone" placeholder="+1 (555) 000-0000" type="tel" value={phone} onChange={setPhone} />
+                  <input
+                    id="checkout-phone" type="tel" placeholder="+1 (555) 000-0000"
+                    {...register("phone")}
+                    className="w-full px-3 py-2.5 text-sm rounded-xl outline-none transition-all"
+                    style={{ border: "1.5px solid #e5e7eb", color: "#111" }}
+                    onFocus={(e) => { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; }}
+                    onBlur={(e)  => { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; }}
+                  />
                 </div>
 
                 {/* Note */}
@@ -278,8 +430,7 @@ export default function CheckoutPage() {
                   <textarea
                     id="checkout-note"
                     placeholder="Tell us what do you think…"
-                    value={note}
-                    onChange={(e) => setNote(e.target.value)}
+                    {...register("note")}
                     rows={3}
                     className="w-full px-3 py-2.5 text-sm rounded-xl outline-none resize-none transition-all"
                     style={{ border: "1.5px solid #e5e7eb" }}
@@ -287,7 +438,7 @@ export default function CheckoutPage() {
                     onBlur={(e)  => { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; }}
                   />
                 </div>
-              </div>
+              </form>
             </div>
 
             {/* ── Right: Order Summary + Payment ── */}
@@ -447,14 +598,27 @@ export default function CheckoutPage() {
                 Your payment information is encrypted and secure.
               </div>
 
+              {/* Checkout error */}
+              {checkoutMutation.isError && (
+                <div className="flex items-center gap-2 text-xs text-red-600 bg-red-50 px-3 py-2 rounded-xl" style={{ border: "1px solid #fecaca" }}>
+                  <AlertCircle size={13} />
+                  {checkoutMutation.error?.message ?? "Checkout failed — try again"}
+                </div>
+              )}
+
               {/* Place Order */}
               <button
                 id="place-order-btn"
-                onClick={handlePlaceOrder}
-                className="w-full py-4 text-sm font-extrabold rounded-xl transition-opacity hover:opacity-90 active:scale-[0.99]"
+                type="submit"
+                form="billing-form"
+                disabled={checkoutMutation.isPending}
+                className="w-full py-4 text-sm font-extrabold rounded-xl transition-opacity hover:opacity-90 active:scale-[0.99] disabled:opacity-70 flex items-center justify-center gap-2"
                 style={{ backgroundColor: "#f5c518", color: "#111" }}
               >
-                Place Order — ${orderTotal}
+                {checkoutMutation.isPending
+                  ? <><span className="w-4 h-4 border-2 border-gray-800 border-t-transparent rounded-full animate-spin" /> Placing order…</>
+                  : <>Place Order — ${orderTotal}</>
+                }
               </button>
             </div>
           </div>

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Search, User, Heart, ShoppingBag, ChevronDown } from "lucide-react";
 import Link from "next/link";
-import { useStore } from "../context/StoreContext";
+import { useStore } from "../store/useStoreZustand";
 
 const navLinks = [
   { label: "Category", href: "/category/all", hasDropdown: true },

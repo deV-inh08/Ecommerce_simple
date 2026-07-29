@@ -1,15 +1,24 @@
 "use client";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+
+interface NewsletterData {
+  email: string;
+}
 
 export default function NewsletterSection() {
-  const [email, setEmail]   = useState("");
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<NewsletterData>({ defaultValues: { email: "" } });
+
   const [subbed, setSubbed] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.includes("@")) return;
+  const onSubmit = async () => {
     setSubbed(true);
-    setEmail("");
+    reset();
     setTimeout(() => setSubbed(false), 4000);
   };
 
@@ -33,24 +42,29 @@ export default function NewsletterSection() {
                 🎉 You&apos;re subscribed! Thank you.
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex gap-3 max-w-md">
-                <input
-                  id="newsletter-email"
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-3 text-sm rounded-xl outline-none"
-                  style={{ border: "none", minWidth: 0 }}
-                />
-                <button
-                  type="submit"
-                  id="newsletter-subscribe-btn"
-                  className="px-6 py-3 text-sm font-bold rounded-xl transition-opacity hover:opacity-90 flex-shrink-0"
-                  style={{ backgroundColor: "#f5c518", color: "#111" }}
-                >
-                  Subscribe
-                </button>
+              <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-1 max-w-md">
+                <div className="flex gap-3">
+                  <input
+                    id="newsletter-email"
+                    type="email"
+                    placeholder="Enter your email"
+                    {...register("email", {
+                      required: "Email is required",
+                      pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email" },
+                    })}
+                    className="flex-1 px-4 py-3 text-sm rounded-xl outline-none"
+                    style={{ border: errors.email ? "2px solid #dc2626" : "none", minWidth: 0 }}
+                  />
+                  <button
+                    type="submit"
+                    id="newsletter-subscribe-btn"
+                    className="px-6 py-3 text-sm font-bold rounded-xl transition-opacity hover:opacity-90 flex-shrink-0"
+                    style={{ backgroundColor: "#f5c518", color: "#111" }}
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                {errors.email && <p className="text-xs text-red-300 mt-1 ml-1">{errors.email.message}</p>}
               </form>
             )}
           </div>

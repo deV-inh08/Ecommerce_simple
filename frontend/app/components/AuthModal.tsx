@@ -1,6 +1,8 @@
 "use client";
 import { useState, useEffect } from "react";
-import { X, Eye, EyeOff, Mail, Lock, User, CheckCircle } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { X, Eye, EyeOff, Mail, Lock, User, CheckCircle, AlertCircle } from "lucide-react";
+import { useLogin, useRegister } from "../hooks/useIdentity";
 
 /* ─── Social button ──────────────────────────────────────── */
 function SocialBtn({ icon, label }: { icon: React.ReactNode; label: string }) {
@@ -18,11 +20,12 @@ function SocialBtn({ icon, label }: { icon: React.ReactNode; label: string }) {
 
 /* ─── Input field ────────────────────────────────────────── */
 function InputField({
-  id, label, type = "text", placeholder, value, onChange, icon, extra,
+  id, label, type = "text", placeholder, icon, error,
+  registration,
 }: {
   id: string; label: string; type?: string; placeholder: string;
-  value: string; onChange: (v: string) => void;
-  icon?: React.ReactNode; extra?: React.ReactNode;
+  icon?: React.ReactNode; error?: string;
+  registration: React.InputHTMLAttributes<HTMLInputElement>;
 }) {
   const [show, setShow] = useState(false);
   const isPass = type === "password";
@@ -37,16 +40,15 @@ function InputField({
           id={id}
           type={isPass ? (show ? "text" : "password") : type}
           placeholder={placeholder}
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
+          {...registration}
           className="w-full py-2.5 text-sm rounded-xl outline-none transition-all"
           style={{
-            border: "1.5px solid #e5e7eb",
+            border: `1.5px solid ${error ? "#dc2626" : "#e5e7eb"}`,
             paddingLeft: icon ? "36px" : "14px",
             paddingRight: isPass ? "40px" : "14px",
           }}
-          onFocus={(e) => { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; }}
-          onBlur={(e)  => { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; }}
+          onFocus={(e) => { if (!error) { e.target.style.borderColor = "#0d5c5c"; e.target.style.boxShadow = "0 0 0 3px rgba(13,92,92,0.08)"; } }}
+          onBlur={(e)  => { if (!error) { e.target.style.borderColor = "#e5e7eb"; e.target.style.boxShadow = "none"; } }}
         />
         {isPass && (
           <button
@@ -58,9 +60,18 @@ function InputField({
           </button>
         )}
       </div>
-      {extra}
+      {error && <p className="text-xs text-red-500">{error}</p>}
     </div>
   );
+}
+
+/* ─── Form data types ────────────────────────────────────── */
+interface AuthFormData {
+  email: string;
+  name: string;
+  password: string;
+  confirm: string;
+  remember: boolean;
 }
 
 /* ─── Auth Modal ─────────────────────────────────────────── */
@@ -73,15 +84,28 @@ export default function AuthModal({
   onClose: () => void;
   onSuccess?: (user: { name: string; email: string }) => void;
 }) {
-  const [mode, setMode]           = useState<"login" | "signup">(initialMode);
-  const [email, setEmail]         = useState("");
-  const [name, setName]           = useState("");
-  const [password, setPassword]   = useState("");
-  const [confirm, setConfirm]     = useState("");
-  const [remember, setRemember]   = useState(false);
-  const [error, setError]         = useState("");
-  const [success, setSuccess]     = useState(false);
-  const [loading, setLoading]     = useState(false);
+  const [mode, setMode] = useState<"login" | "signup">(initialMode);
+  const [success, setSuccess] = useState(false);
+  const [apiError, setApiError] = useState<string | null>(null);
+
+  const loginMutation = useLogin();
+  const registerMutation = useRegister();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    watch,
+    setError,
+    formState: { errors, isSubmitting },
+  } = useForm<AuthFormData>({
+    defaultValues: { email: "", name: "", password: "", confirm: "", remember: false },
+  });
+
+  const watchedEmail = watch("email");
+  const watchedName = watch("name");
+
+  const isPending = loginMutation.isPending || registerMutation.isPending;
 
   // Close on Escape
   useEffect(() => {
@@ -97,32 +121,38 @@ export default function AuthModal({
   }, []);
 
   const switchMode = (m: "login" | "signup") => {
-    setMode(m); setError(""); setEmail(""); setPassword(""); setName(""); setConfirm("");
+    setMode(m);
+    reset();
+    setApiError(null);
   };
 
-  const validate = () => {
-    if (!email.includes("@")) return "Please enter a valid email.";
-    if (password.length < 6)  return "Password must be at least 6 characters.";
-    if (mode === "signup") {
-      if (!name.trim())         return "Please enter your name.";
-      if (password !== confirm) return "Passwords do not match.";
+  const onSubmit = async (data: AuthFormData) => {
+    setApiError(null);
+
+    if (mode === "signup" && data.password !== data.confirm) {
+      setError("confirm", { message: "Passwords do not match." });
+      return;
     }
-    return "";
-  };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const err = validate();
-    if (err) { setError(err); return; }
-    setLoading(true);
-    // Simulate async auth (replace with real API call)
-    await new Promise((r) => setTimeout(r, 900));
-    setLoading(false);
-    setSuccess(true);
-    setTimeout(() => {
-      onSuccess?.({ name: name || email.split("@")[0], email });
-      onClose();
-    }, 1200);
+    try {
+      if (mode === "login") {
+        await loginMutation.mutateAsync({ email: data.email, password: data.password });
+      } else {
+        const [firstName, ...rest] = (data.name || data.email).split(" ");
+        await registerMutation.mutateAsync({
+          email: data.email,
+          password: data.password,
+          firstName,
+          lastName: rest.join(" ") || "-",
+        });
+      }
+      setSuccess(true);
+      onSuccess?.({ name: data.name || data.email.split("@")[0], email: data.email });
+      setTimeout(() => onClose(), 1200);
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Something went wrong";
+      setApiError(msg);
+    }
   };
 
   const socialIcons = {
@@ -212,37 +242,51 @@ export default function AuthModal({
               <p className="text-sm text-gray-400">Redirecting you now…</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+            <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
               {/* Fields */}
               <InputField
                 id="auth-email" label="Email" type="email"
                 placeholder="you@example.com"
-                value={email} onChange={setEmail}
+                registration={register("email", {
+                  required: "Please enter your email.",
+                  pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Please enter a valid email." },
+                })}
                 icon={<Mail size={14} />}
+                error={errors.email?.message}
               />
 
               {mode === "signup" && (
                 <InputField
                   id="auth-name" label="Name"
                   placeholder="Your full name"
-                  value={name} onChange={setName}
+                  registration={register("name", {
+                    required: "Please enter your name.",
+                  })}
                   icon={<User size={14} />}
+                  error={errors.name?.message}
                 />
               )}
 
               <InputField
                 id="auth-password" label="Password" type="password"
                 placeholder="At least 6 characters"
-                value={password} onChange={setPassword}
+                registration={register("password", {
+                  required: "Password is required.",
+                  minLength: { value: 6, message: "Password must be at least 6 characters." },
+                })}
                 icon={<Lock size={14} />}
+                error={errors.password?.message}
               />
 
               {mode === "signup" && (
                 <InputField
                   id="auth-confirm" label="Confirm Password" type="password"
                   placeholder="Repeat your password"
-                  value={confirm} onChange={setConfirm}
+                  registration={register("confirm", {
+                    required: "Please confirm your password.",
+                  })}
                   icon={<Lock size={14} />}
+                  error={errors.confirm?.message}
                 />
               )}
 
@@ -253,8 +297,7 @@ export default function AuthModal({
                     <input
                       id="remember-me"
                       type="checkbox"
-                      checked={remember}
-                      onChange={(e) => setRemember(e.target.checked)}
+                      {...register("remember")}
                       className="w-3.5 h-3.5 rounded accent-[#0d5c5c]"
                     />
                     <span className="text-xs text-gray-500">Remember me</span>
@@ -265,20 +308,22 @@ export default function AuthModal({
                 </div>
               )}
 
-              {/* Error */}
-              {error && (
-                <p className="text-xs text-red-500 bg-red-50 px-3 py-2 rounded-lg">{error}</p>
-              )}
-
               {/* Submit */}
               <button
                 id={mode === "login" ? "signin-btn" : "signup-btn"}
                 type="submit"
-                disabled={loading}
+                disabled={isSubmitting || isPending}
                 className="w-full py-3 text-sm font-bold text-white rounded-xl transition-opacity hover:opacity-90 disabled:opacity-70 flex items-center justify-center gap-2"
                 style={{ backgroundColor: "#0d5c5c" }}
               >
-                {loading ? (
+                {/* API error */}
+              {apiError && (
+                <div className="flex items-center gap-2 text-xs text-red-600 bg-red-50 px-3 py-2 rounded-lg" style={{ border: "1px solid #fecaca" }}>
+                  <AlertCircle size={13} />
+                  {apiError}
+                </div>
+              )}
+              {(isSubmitting || isPending) ? (
                   <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                 ) : mode === "login" ? "Sign In" : "Sign Up"}
               </button>

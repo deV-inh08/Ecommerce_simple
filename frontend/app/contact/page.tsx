@@ -1,44 +1,33 @@
 "use client";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
-/* ─── Input helper ───────────────────────────────────────── */
-function FormInput({
-  id, placeholder, type = "text", value, onChange,
-}: {
-  id: string; placeholder: string; type?: string;
-  value: string; onChange: (v: string) => void;
-}) {
-  return (
-    <input
-      id={id} type={type} placeholder={placeholder} value={value}
-      onChange={(e) => onChange(e.target.value)}
-      className="w-full px-4 py-3 text-sm outline-none transition-all bg-white"
-      style={{ border: "none", borderBottom: "1.5px solid #e5e7eb", color: "#111" }}
-      onFocus={(e) => { e.target.style.borderBottomColor = "#0d5c5c"; }}
-      onBlur={(e)  => { e.target.style.borderBottomColor = "#e5e7eb"; }}
-    />
-  );
+/* ─── Form data type ─────────────────────────────────────── */
+interface ContactFormData {
+  firstName: string;
+  email: string;
+  phone: string;
+  message: string;
 }
 
 /* ─── Page ───────────────────────────────────────────────── */
 export default function ContactPage() {
-  const [firstName, setFirstName] = useState("");
-  const [email, setEmail]         = useState("");
-  const [phone, setPhone]         = useState("");
-  const [message, setMessage]     = useState("");
-  const [loading, setLoading]     = useState(false);
-  const [sent, setSent]           = useState(false);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors, isSubmitting },
+    getValues,
+  } = useForm<ContactFormData>({ defaultValues: { firstName: "", email: "", phone: "", message: "" } });
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!firstName || !email || !message) return;
-    setLoading(true);
+  const [sent, setSent] = useState(false);
+
+  const onSubmit = async () => {
     await new Promise((r) => setTimeout(r, 1000));
-    setLoading(false);
     setSent(true);
   };
 
@@ -150,48 +139,79 @@ export default function ContactPage() {
                   <CheckCircle size={48} style={{ color: "#0d5c5c" }} />
                   <div className="text-center">
                     <h3 className="text-xl font-extrabold text-gray-900 mb-1">Message Sent!</h3>
-                    <p className="text-sm text-gray-400">Thank you, {firstName}. We&apos;ll get back to you within 24 hours.</p>
+                    <p className="text-sm text-gray-400">Thank you, {getValues("firstName")}. We&apos;ll get back to you within 24 hours.</p>
                   </div>
                   <button
-                    onClick={() => { setSent(false); setFirstName(""); setEmail(""); setPhone(""); setMessage(""); }}
+                    onClick={() => { setSent(false); reset(); }}
                     className="text-sm font-semibold" style={{ color: "#0d5c5c" }}
                   >
                     Send another message
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full">
+                <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 w-full">
                   <div>
-                    <FormInput id="contact-name" placeholder="Your first name" value={firstName} onChange={setFirstName} />
+                    <input
+                      id="contact-name"
+                      placeholder="Your first name"
+                      {...register("firstName", { required: "First name is required" })}
+                      className="w-full px-4 py-3 text-sm outline-none transition-all bg-white"
+                      style={{ border: "none", borderBottom: `1.5px solid ${errors.firstName ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+                      onFocus={(e) => { if (!errors.firstName) e.target.style.borderBottomColor = "#0d5c5c"; }}
+                      onBlur={(e) => { if (!errors.firstName) e.target.style.borderBottomColor = "#e5e7eb"; }}
+                    />
+                    {errors.firstName && <p className="text-xs text-red-500 mt-1">{errors.firstName.message}</p>}
                   </div>
                   <div>
-                    <FormInput id="contact-email" placeholder="Your email address" type="email" value={email} onChange={setEmail} />
+                    <input
+                      id="contact-email"
+                      type="email"
+                      placeholder="Your email address"
+                      {...register("email", {
+                        required: "Email is required",
+                        pattern: { value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, message: "Invalid email address" },
+                      })}
+                      className="w-full px-4 py-3 text-sm outline-none transition-all bg-white"
+                      style={{ border: "none", borderBottom: `1.5px solid ${errors.email ? "#dc2626" : "#e5e7eb"}`, color: "#111" }}
+                      onFocus={(e) => { if (!errors.email) e.target.style.borderBottomColor = "#0d5c5c"; }}
+                      onBlur={(e) => { if (!errors.email) e.target.style.borderBottomColor = "#e5e7eb"; }}
+                    />
+                    {errors.email && <p className="text-xs text-red-500 mt-1">{errors.email.message}</p>}
                   </div>
                   <div>
-                    <FormInput id="contact-phone" placeholder="Your phone number" type="tel" value={phone} onChange={setPhone} />
+                    <input
+                      id="contact-phone"
+                      type="tel"
+                      placeholder="Your phone number"
+                      {...register("phone")}
+                      className="w-full px-4 py-3 text-sm outline-none transition-all bg-white"
+                      style={{ border: "none", borderBottom: "1.5px solid #e5e7eb", color: "#111" }}
+                      onFocus={(e) => { e.target.style.borderBottomColor = "#0d5c5c"; }}
+                      onBlur={(e)  => { e.target.style.borderBottomColor = "#e5e7eb"; }}
+                    />
                   </div>
                   <div>
                     <textarea
                       id="contact-message"
                       placeholder="Write your messages…"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
+                      {...register("message", { required: "Message is required" })}
                       rows={4}
                       className="w-full px-4 py-3 text-sm outline-none resize-none transition-all bg-white"
-                      style={{ border: "none", borderBottom: "1.5px solid #e5e7eb" }}
-                      onFocus={(e) => { e.target.style.borderBottomColor = "#0d5c5c"; }}
-                      onBlur={(e)  => { e.target.style.borderBottomColor = "#e5e7eb"; }}
+                      style={{ border: "none", borderBottom: `1.5px solid ${errors.message ? "#dc2626" : "#e5e7eb"}` }}
+                      onFocus={(e) => { if (!errors.message) e.target.style.borderBottomColor = "#0d5c5c"; }}
+                      onBlur={(e)  => { if (!errors.message) e.target.style.borderBottomColor = "#e5e7eb"; }}
                     />
+                    {errors.message && <p className="text-xs text-red-500 mt-1">{errors.message.message}</p>}
                   </div>
                   <div className="pt-1">
                     <button
                       id="send-message-btn"
                       type="submit"
-                      disabled={loading}
+                      disabled={isSubmitting}
                       className="flex items-center gap-2 px-8 py-3 text-sm font-bold text-white rounded-xl transition-opacity hover:opacity-90 disabled:opacity-70"
                       style={{ backgroundColor: "#0d5c5c" }}
                     >
-                      {loading ? (
+                      {isSubmitting ? (
                         <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                       ) : (
                         <Send size={15} />

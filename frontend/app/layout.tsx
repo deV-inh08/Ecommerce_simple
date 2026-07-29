@@ -1,14 +1,23 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope, Roboto_Slab } from "next/font/google";
 import "./globals.css";
-import { StoreProvider } from "./context/StoreContext";
 import CartPopup from "./components/CartPopup";
 import AuthModalWrapper from "./components/AuthModalWrapper";
+import QueryProvider from "./providers/QueryProvider";
 
-const inter = Inter({
-  variable: "--font-inter",
+/* ─── Fonts ──────────────────────────────────────────────── */
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
+});
+
+const robotoSlab = Roboto_Slab({
+  variable: "--font-roboto-slab",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -23,13 +32,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full`}>
+    <html lang="en" className={`${manrope.variable} ${robotoSlab.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased w-full">
-        <StoreProvider>
+        <QueryProvider>
           {children}
           <CartPopup />
           <AuthModalWrapper />
-        </StoreProvider>
+        </QueryProvider>
       </body>
     </html>
   );

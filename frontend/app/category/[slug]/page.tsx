@@ -1,9 +1,10 @@
 "use client";
 import { useState, useMemo, use, useRef, useEffect } from "react";
 import Link from "next/link";
-import { SlidersHorizontal, ChevronDown, Heart, Star, X } from "lucide-react";
+import { SlidersHorizontal, ChevronDown, Heart, Star, X, ShoppingCart } from "lucide-react";
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
+import BrowseAllButton from "../../components/BrowseAllButton";
 
 /* ─── Mock products ───────────────────────────────────────── */
 const ALL_PRODUCTS = [
@@ -85,8 +86,8 @@ function ListingCard({ product }: { product: typeof ALL_PRODUCTS[0] }) {
             </span>
           </div>
         </div>
-        <button className="w-full py-2 text-sm font-semibold rounded-lg mt-1 transition-all hover:bg-[#0d5c5c] hover:text-white"
-          style={{ border: "1.5px solid #0d5c5c", color: "#0d5c5c", backgroundColor: "transparent" }}>
+        <button className="btn-add-to-cart mt-1">
+          <ShoppingCart size={14} strokeWidth={2} />
           Add to Cart
         </button>
       </div>
@@ -181,7 +182,7 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
                 All Filters
                 {activeFilterCount > 0 && (
                   <span className="w-5 h-5 rounded-full text-xs text-white flex items-center justify-center font-bold"
-                    style={{ backgroundColor: "#0d5c5c" }}>{activeFilterCount}</span>
+                    style={{ backgroundColor: "#005D63" }}>{activeFilterCount}</span>
                 )}
               </button>
 
@@ -220,7 +221,7 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
                             <div className="w-4 h-4 rounded flex items-center justify-center flex-shrink-0 transition-all"
                               style={{
                                 border: selectedCats.includes(cat) ? "none" : "1.5px solid #d1d5db",
-                                backgroundColor: selectedCats.includes(cat) ? "#0d5c5c" : "white",
+                                backgroundColor: selectedCats.includes(cat) ? "#005D63" : "white",
                               }}>
                               {selectedCats.includes(cat) && <CheckMark />}
                             </div>
@@ -264,7 +265,7 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
                             <div className="w-4 h-4 rounded flex items-center justify-center flex-shrink-0 transition-all"
                               style={{
                                 border: selectedRating === r ? "none" : "1.5px solid #d1d5db",
-                                backgroundColor: selectedRating === r ? "#0d5c5c" : "white",
+                                backgroundColor: selectedRating === r ? "#005D63" : "white",
                               }}>
                               {selectedRating === r && <CheckMark />}
                             </div>
@@ -310,7 +311,7 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
                     <button key={opt}
                       onClick={() => { setSortBy(opt); setShowSort(false); setPage(1); }}
                       className="w-full text-left px-4 py-2.5 text-sm transition-colors hover:bg-gray-50"
-                      style={{ color: sortBy === opt ? "#0d5c5c" : "#374151", fontWeight: sortBy === opt ? 600 : 400 }}>
+                      style={{ color: sortBy === opt ? "#005D63" : "#374151", fontWeight: sortBy === opt ? 600 : 400 }}>
                       {opt}
                     </button>
                   ))}
@@ -326,7 +327,7 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
               {selectedCats.map((cat) => (
                 <button key={cat} onClick={() => toggleCat(cat)}
                   className="flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-full hover:opacity-80 transition-opacity"
-                  style={{ backgroundColor: "#e8f5f0", color: "#0d5c5c" }}>
+                  style={{ backgroundColor: "#e8f5f0", color: "#005D63" }}>
                   {cat} <X size={10} />
                 </button>
               ))}
@@ -357,7 +358,7 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
               <p className="text-sm text-gray-400">Try adjusting your filters</p>
               <button onClick={clearFilters}
                 className="px-6 py-2 text-sm font-bold text-white rounded-xl hover:opacity-90 transition-opacity"
-                style={{ backgroundColor: "#0d5c5c" }}>
+                style={{ backgroundColor: "#005D63" }}>
                 Clear Filters
               </button>
             </div>
@@ -371,7 +372,7 @@ export default function CategoryPage({ params }: { params: Promise<{ slug: strin
             <div className="flex justify-center mt-12">
               <button id="load-more-btn" onClick={() => setPage((p) => p + 1)}
                 className="px-10 py-3 text-sm font-bold text-white rounded-xl transition-opacity hover:opacity-90"
-                style={{ backgroundColor: "#0d5c5c" }}>
+                style={{ backgroundColor: "#005D63" }}>
                 Load More
               </button>
             </div>

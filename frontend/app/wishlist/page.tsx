@@ -3,7 +3,7 @@ import Link from "next/link";
 import { X, ShoppingCart } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useStore } from "../context/StoreContext";
+import { useStore } from "../store/useStoreZustand";
 
 export default function WishlistPage() {
   const { wishlist, removeFromWishlist, moveToCart } = useStore();

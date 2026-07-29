@@ -1,5 +1,5 @@
 "use client";
-import { useStore } from "../context/StoreContext";
+import { useStore } from "../store/useStoreZustand";
 import AuthModal from "./AuthModal";
 
 export default function AuthModalWrapper() {

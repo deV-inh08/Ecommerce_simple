@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Minus, Plus, Heart, Star, Tag, X, Check, ChevronRight, Truck, Percent } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import { useStore } from "../context/StoreContext";
+import { useStore } from "../store/useStoreZustand";
 
 /* ─── Voucher definitions ────────────────────────────────── */
 interface Voucher {

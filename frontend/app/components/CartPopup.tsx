@@ -2,7 +2,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { X, Minus, Plus, ShoppingBag, Truck } from "lucide-react";
-import { useStore } from "../context/StoreContext";
+import { useStore } from "../store/useStoreZustand";
 
 export default function CartPopup() {
   const { cartItems, cartCount, cartTotal, cartOpen, closeCart, removeFromCart, updateQty } = useStore();
