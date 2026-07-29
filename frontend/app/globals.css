@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Pursuit Brand Colors */
+  --primary: #0d5c5c;
+  --primary-dark: #083d3d;
+  --primary-light: #1a7a7a;
+  --accent: #f5c518;
+  --accent-dark: #d4a804;
+  --beige: #f5e6c8;
+  --beige-light: #faf3e4;
+  --beige-dark: #e8d4aa;
+  --text-dark: #111111;
+  --text-muted: #6b7280;
+  --text-light: #9ca3af;
+  --card-bg: #f5e6c8;
+  --border: #e5e7eb;
+  --red: #ef4444;
+  --sale-red: #dc2626;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Responsive container — tự căn giữa và có padding hai bên */
+.site-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(16px, 9.375vw, 135px);
+  padding-right: clamp(16px, 9.375vw, 135px);
+}
+
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 3px;
+}
+
+/* Ticker animation */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-inner {
+  animation: ticker 20s linear infinite;
+  white-space: nowrap;
+}
+
+/* Hover transitions */
+.product-card {
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.product-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.category-card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.category-card:hover {
+  border-color: var(--primary);
+  box-shadow: 0 4px 15px rgba(13,92,92,0.15);
+}
+
+.brand-card {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+.brand-card:hover {
+  border-color: var(--primary);
+}
