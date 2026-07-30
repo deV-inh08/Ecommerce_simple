@@ -1,5 +1,11 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
+import section from "../../public/image/section/section.svg"
+import shape_section from "../../public/image/section/shape-section.svg"
+import star from "../../public/image/section/Star_section.svg"
+
+
 
 const slides = [
   {
@@ -87,54 +93,16 @@ export default function HeroSection() {
         </div>
 
         {/* Right Image Area */}
-        <div className="flex-1 flex justify-center items-center relative">
-          {/* Decorative shapes */}
-          <div
-            style={{
-              backgroundColor: slides[active].accentColor,
-              position: "absolute",
-              width: "280px",
-              height: "280px",
-              borderRadius: "4px",
-              opacity: 0.85,
-              transform: "rotate(0deg)",
-            }}
+        <div className="flex-1 flex justify-start items-center relative">
+          <Image src={star} alt="" className="absolute top-20 -left-12"></Image>
+          <Image src={section} alt="Hero section" />
+          <Image
+            src={shape_section}
+            alt=""
+            className="absolute bottom-0 right-0"
           />
-          <div
-            style={{
-              backgroundColor: "#111",
-              position: "absolute",
-              width: "100px",
-              height: "100px",
-              borderRadius: "4px",
-              left: "55%",
-              top: "5%",
-              transform: "rotate(-15deg)",
-              opacity: 0.8,
-            }}
-          />
-
-          {/* Product image placeholder */}
-          <div
-            style={{
-              width: "260px",
-              height: "260px",
-              position: "relative",
-              zIndex: 10,
-              backgroundColor: "rgba(255,255,255,0.15)",
-              borderRadius: "8px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "2px dashed rgba(255,255,255,0.4)",
-            }}
-          >
-            <span className="text-white text-sm font-medium opacity-70">
-              Product Image
-            </span>
-          </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 }

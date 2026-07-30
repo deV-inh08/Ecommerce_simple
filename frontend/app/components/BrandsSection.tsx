@@ -1,13 +1,17 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
+import { type StaticImageData } from "next/image";
+import dell_img from "../../public/image/brand/dell.svg";
+import hp_img from "../../public/image/brand/hp.svg";
+import nike_img from "../../public/image/brand/nkie.svg";
+import lv_img from "../../public/image/brand/louis.svg";
 
-const brands = [
-  { id: "dell", label: "Dell Brand", initial: "DELL" },
-  { id: "hp", label: "HP Brand", initial: "HP" },
-  { id: "nike", label: "Nike Brand", initial: "NIKE" },
-  { id: "lv", label: "Louis Vuitton", initial: "LV" },
-  { id: "apple", label: "Apple Brand", initial: "APPLE" },
-  { id: "samsung", label: "Samsung Brand", initial: "SAMSUNG" },
+const brands: { id: string; label: string; img?: StaticImageData; initial?: string }[] = [
+  { id: "dell", label: "Dell Brand", img: dell_img },
+  { id: "hp", label: "HP Brand", img: hp_img },
+  { id: "nike", label: "Nike Brand", img: nike_img },
+  { id: "lv", label: "Louis Vuitton", img: lv_img },
 ];
 
 export default function BrandsSection() {
@@ -21,54 +25,53 @@ export default function BrandsSection() {
         </h2>
         <h2 className="text-3xl font-extrabold text-gray-900 mb-10">brands</h2>
 
-        <div className="grid grid-cols-6 gap-4">
+        <div className="flex gap-4 flex-wrap">
           {brands.map((brand) => (
             <button
               key={brand.id}
               id={`brand-${brand.id}`}
               onClick={() => setActiveBrand(brand.id)}
-              className="brand-card flex flex-col items-center gap-3 p-5 rounded"
-              style={{
-                backgroundColor: "#f5e6c8",
-                border:
-                  activeBrand === brand.id
-                    ? "2px solid #0d5c5c"
-                    : "2px solid transparent",
-              }}
+              className="brand-card flex flex-col items-center gap-3"
+              style={{ background: "none", border: "none", padding: 0, cursor: "pointer" }}
             >
-              {/* Brand logo placeholder */}
+              {/* Nền beige chứa ảnh */}
               <div
                 style={{
-                  width: "64px",
-                  height: "48px",
+                  width: "270px",
+                  height: "210px",
+                  backgroundColor: "#f5e6c8",
+                  borderRadius: "8px",
+                  border: activeBrand === brand.id ? "2px solid #0d5c5c" : "2px solid transparent",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}
               >
-                <span
-                  style={{
-                    fontSize: "14px",
-                    fontWeight: 800,
-                    color: activeBrand === brand.id ? "#0d5c5c" : "#555",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  {brand.initial}
-                </span>
+                <div style={{ width: "124px", height: "150px", position: "relative" }}>
+                  {brand.img ? (
+                    <Image
+                      src={brand.img}
+                      alt={brand.label}
+                      fill
+                      style={{ objectFit: "contain" }}
+                    />
+                  ) : (
+                    <span className="font-bold">{brand.initial}</span>
+                  )}
+                </div>
               </div>
+
+              {/* Chữ bên dưới nền */}
               <span
-                style={{
-                  fontSize: "12px",
-                  fontWeight: 500,
-                  color: activeBrand === brand.id ? "#0d5c5c" : "#374151",
-                }}
+                className="font-bold text-sm"
+                style={{ color: activeBrand === brand.id ? "#0d5c5c" : "#111" }}
               >
                 {brand.label}
               </span>
             </button>
           ))}
         </div>
+
 
         {/* Progress indicator */}
         <div className="mt-6 flex gap-1">
@@ -79,3 +82,4 @@ export default function BrandsSection() {
     </section>
   );
 }
+

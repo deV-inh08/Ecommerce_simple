@@ -18,7 +18,7 @@
   --beige:       #f5e6c8;
   --beige-light: #faf3e4;
   --beige-dark:  #e8d4aa;
-  --text-dark:   #111111;
+  --text-dark:   #171717;
   --text-muted:  #6b7280;
   --text-light:  #9ca3af;
   --card-bg:     #f5e6c8;
@@ -69,6 +69,12 @@ h1, h2, h3, h4, h5, h6,
 .font-heading {
   font-family: var(--font-heading);
   line-height: 1.25;
+}
+
+
+span, p {
+    color: var(--text-dark);
+    font-family: var(--font-body);
 }
 
 /* ─────────────────────────────────────────────────────────── *

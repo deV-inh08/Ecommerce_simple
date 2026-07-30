@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { ProductCard, Product } from "./ProductCard";
+import banner_flashsale from "../../public/image/Banner.png";
 
 const saleProducts: Product[] = [
   {
@@ -68,106 +70,22 @@ export default function OffersSection() {
           </a>
         </div>
 
-        {/* Grid layout matching Figma */}
+        {/* Grid layout: 3 cols, 2 rows */}
         <div className="grid grid-cols-3 gap-4">
-          {/* Left – Black Friday banner (spans 2 rows) */}
-          <div
-            className="row-span-2 rounded overflow-hidden flex flex-col items-center justify-center relative"
-            style={{
-              backgroundColor: "#f5e6c8",
-              minHeight: "360px",
-              border: "2px solid #0d5c5c",
-            }}
-          >
-            {/* Black Friday Banner Placeholder */}
-            <div
-              style={{
-                width: "100%",
-                height: "100%",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                padding: "32px",
-                gap: "12px",
-              }}
-            >
-              <span
-                style={{
-                  fontSize: "11px",
-                  fontWeight: 700,
-                  letterSpacing: "0.15em",
-                  color: "#333",
-                  textTransform: "uppercase",
-                }}
-              >
-                Limited Time Only
-              </span>
-              <div
-                style={{
-                  backgroundColor: "#e05c2e",
-                  padding: "6px 24px",
-                  transform: "skew(-5deg)",
-                  width: "100%",
-                  textAlign: "center",
-                }}
-              >
-                <span
-                  style={{
-                    color: "#fff",
-                    fontWeight: 900,
-                    fontSize: "20px",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  BLACK FRIDAY
-                </span>
-              </div>
-              <div
-                style={{
-                  backgroundColor: "#0d3d5c",
-                  padding: "6px 24px",
-                  width: "100%",
-                  textAlign: "center",
-                }}
-              >
-                <span
-                  style={{
-                    color: "#fff",
-                    fontWeight: 900,
-                    fontSize: "28px",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  SALE
-                </span>
-              </div>
-              <span
-                style={{
-                  fontSize: "14px",
-                  fontWeight: 700,
-                  color: "#333",
-                  marginTop: "8px",
-                }}
-              >
-                GET UPTO 50% OFF
-              </span>
-            </div>
+          {/* Row 1, Col 1-2: Black Friday banner */}
+          <div className="col-span-2 rounded overflow-hidden">
+            <Image src={banner_flashsale} alt="Black Friday Banner" width={770} height={518} style={{ width: "100%", height: "auto", display: "block" }} />
           </div>
 
-          {/* Top right – Out of Stock product */}
-          <div className="col-span-2">
-            <div className="grid grid-cols-2 gap-4">
-              <ProductCard product={saleProducts[0]} />
-            </div>
+          {/* Row 1, Col 3: First product */}
+          <div>
+            <ProductCard product={saleProducts[0]} />
           </div>
 
-          {/* Bottom row – 3 products */}
-          <div className="col-span-2 grid grid-cols-3 gap-4">
-            {saleProducts.slice(1).map((product) => (
-              <ProductCard key={product.id} product={product} />
-            ))}
-          </div>
+          {/* Row 2, Col 1-2-3: 3 products, each 1 col */}
+          {saleProducts.slice(1).map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
       </div>
     </section>

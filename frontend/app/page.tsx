@@ -42,8 +42,7 @@ export default function Home() {
         {/* 8. Blog Preview — Learn & Grow */}
         <BlogPreviewSection />
 
-        {/* 9. Newsletter */}
-        <NewsletterSection />
+
       </main>
 
       {/* Footer */}

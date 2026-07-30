@@ -58,8 +58,7 @@ export function ProductCard({ product, loading }: ProductCardProps) {
   if (loading) return <ProductCardSkeleton />;
 
   return (
-    <div className="product-card flex flex-col bg-white rounded-xl overflow-hidden"
-      style={{ border: "1px solid #efefef" }}>
+    <div className="product-card flex flex-col bg-white rounded-xl overflow-hidden">
 
       {/* ── Image area ── */}
       <Link href={`/products/${product.id}`} id={`product-${product.id}`}
@@ -177,8 +176,7 @@ export function ProductCard({ product, loading }: ProductCardProps) {
 /* ─── Skeleton ───────────────────────────────────────────── */
 export function ProductCardSkeleton() {
   return (
-    <div className="flex flex-col rounded-xl overflow-hidden animate-pulse"
-      style={{ border: "1px solid #efefef" }}>
+    <div className="flex flex-col rounded-xl overflow-hidden animate-pulse">
       <div style={{ height: "240px", backgroundColor: "#f3f4f6" }} />
       <div className="p-4 flex flex-col gap-3">
         <div className="h-2.5 rounded-full bg-gray-200 w-1/3" />

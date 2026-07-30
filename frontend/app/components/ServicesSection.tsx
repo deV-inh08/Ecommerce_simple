@@ -1,3 +1,7 @@
+import car from "../../public/image/service/car.svg"
+import delivery from "../../public/image/service/delivery.svg"
+import store from "../../public/image/service/store.svg"
+
 const services = [
   {
     id: "same-day",
@@ -125,12 +129,13 @@ export default function ServicesSection() {
               style={{ boxShadow: "0 2px 12px rgba(0,0,0,0.06)" }}
             >
               {service.icon}
-              <h3 className="font-bold text-gray-900 text-base">
+              <h3 className="text-[20px] font-bold leading-[30px] text-center text-[#131717]">
                 {service.title}
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-[14px] font-normal leading-[24px] text-center text-[#566363]">
                 {service.desc}
               </p>
+
             </div>
           ))}
         </div>

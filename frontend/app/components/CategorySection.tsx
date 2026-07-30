@@ -1,62 +1,60 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
+import { type StaticImageData } from "next/image";
+import babies_img from "../../public/image/categories/babies.svg";
+import beauty_img from "../../public/image/categories/beautiful.svg";
+import furniture_img from "../../public/image/categories/furniture.svg";
+import home_img from "../../public/image/categories/home.svg";
+import jewelry_img from "../../public/image/categories/jewelry.svg";
+import kids_img from "../../public/image/categories/kids.svg";
+import men_img from "../../public/image/categories/men.svg";
+import mobile_img from "../../public/image/categories/phone.svg";
+import shoes_img from "../../public/image/categories/shoes.svg";
+import watch_img from "../../public/image/categories/watch.svg";
+import women_img from "../../public/image/categories/women.svg";
+import laptop_img from "../../public/image/categories/laptop.svg";
+
 
 const categories = [
-  { id: "men",      label: "Men Fashion" },
-  { id: "women",    label: "Women Fashion" },
-  { id: "kids",     label: "Kids Fashion" },
-  { id: "baby",     label: "Baby Fashion" },
-  { id: "mobile",   label: "Mobile Device" },
-  { id: "computer", label: "Computer Device" },
-  { id: "beauty",   label: "Beauty Products" },
-  { id: "furniture",label: "Furniture" },
-  { id: "watch",    label: "Smart Watch" },
-  { id: "shoes",    label: "Modern Shoes" },
-  { id: "jewelry",  label: "Beautiful Jewelry" },
-  { id: "home",     label: "Home Products" },
+  { id: "men", label: "Men Fashion", img: men_img },
+  { id: "women", label: "Women Fashion", img: women_img },
+  { id: "kids", label: "Kids Fashion", img: kids_img },
+  { id: "baby", label: "Baby Fashion", img: babies_img },
+  { id: "mobile", label: "Mobile Device", img: mobile_img },
+  { id: "laptop", label: "laptop Device", img: laptop_img },
+  { id: "beauty", label: "Beauty Products", img: beauty_img },
+  { id: "furniture", label: "Furniture", img: furniture_img },
+  { id: "watch", label: "Smart Watch", img: watch_img },
+  { id: "shoes", label: "Modern Shoes", img: shoes_img },
+  { id: "jewelry", label: "Beautiful Jewelry", img: jewelry_img },
+  { id: "home", label: "Home Products", img: home_img },
 ];
 
-function CategoryCard({ id, label }: { id: string; label: string }) {
+function CategoryCard({ id, label, img }: { id: string; label: string, img: StaticImageData }) {
   return (
     <Link
       href={`/category/${id}`}
       id={`category-${id}`}
-      className="category-card flex flex-col items-center gap-3 p-4 rounded"
-      style={{
-        backgroundColor: "#f5e6c8",
-        border: "2px solid transparent",
-        width: "100%",
-        textDecoration: "none",
-        color: "inherit",
-      }}
+      className="category-card flex flex-col items-center gap-3 rounded text-center pb-3"
+      style={{ textDecoration: "none" }}
     >
-      {/* Image placeholder */}
-      <div
-        style={{
-          width: "100%",
-          height: "110px",
-          backgroundColor: "rgba(0,0,0,0.03)",
-          borderRadius: "4px",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          border: "1.5px dashed #d1c4a0",
-        }}
-      >
-        <span className="text-xs text-gray-400">Image</span>
+      {/* Fixed-size image box */}
+      <div className="w-full h-[228px] bg-[#f5e6c8] rounded flex items-center justify-center overflow-hidden relative">
+        <Image
+          src={img}
+          alt={label}
+          fill
+          style={{ objectFit: "contain", padding: "12px" }}
+        />
       </div>
-      <span
-        style={{
-          color: "#111",
-          fontWeight: 500,
-          fontSize: "13px",
-        }}
-      >
+      <p className="text-dark font-bold text-[14px]">
         {label}
-      </span>
+      </p>
     </Link>
   );
 }
+
 
 export default function CategorySection() {
   return (
@@ -75,6 +73,7 @@ export default function CategorySection() {
               key={cat.id}
               id={cat.id}
               label={cat.label}
+              img={cat.img}
             />
           ))}
         </div>
